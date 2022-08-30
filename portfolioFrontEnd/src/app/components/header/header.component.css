@@ -6,6 +6,21 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+  .row{
+    margin-left: 0px;
+  }
+  .container-fluid{
+    padding: 0px;
+  }
+  .col-xs-12.col-sm-12.col-md-12.col-lg-12{
+    padding: 0px;
+  }
+  .col-xs-12.col-md-4{
+  padding: 0px;
+  }
+  .col-xs-12.col-md-8{
+    padding: 0px;
+  }
   #banner{
     margin: 0px;
     padding: 0px;
@@ -17,11 +32,12 @@
     flex: 1;
   }
 .toolbar {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     right: 0;
     height: 60px;
+    padding: 0px;
     display: flex;
     align-items: center;
     background-color: silver;
@@ -43,47 +59,60 @@
   }
   #perfil {
     border: 2px solid silver;
+    padding-bottom: 0px;
   }
   .text {
     font-size: 30px;
-    margin: 20px 0px 10px 30px;
+    margin: 20px 0px 0px 30px;
   }
   .p1{
   font-size: 15px;
-  margin-left: 3px;
   padding-bottom: 10px;
+  margin-left: 40px;
+  }
+  .p2{
+    margin: 30px;
   }
   .nombre{
     font-size: 20px;
+    padding-top: 0px;
+    margin-bottom: 3px;
+    margin-left: 40px;
   }
 
-  @media (min-width: 576px) {
+  
+  @media (min-width: 700px){
     #perfil{
       position: relative;
-      width: 40%;
-      height: 55%;
-      border-radius: 80% ;
-      top: -30%;
-      margin-left: 30px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50% ;
+      top: -75px;
+      margin-left: 40px;
       
     }
   }
-  @media (max-width: 575px){
+
+  @media (min-width:200px) and (max-width: 700px){
     #perfil{
       position: relative;
       width: 50%;
       height: 70%;
       border-radius: 80% ;
       top: 0%;
-      margin-left: 130px;
-      
+      margin-left: 120px;
+    
     }
     .nombre{
       text-align: center;
+
     }
     .p1{
       text-align: center;
     } 
+    .image-fluid{
+      text-align: center;
+    }
   }
   
   
