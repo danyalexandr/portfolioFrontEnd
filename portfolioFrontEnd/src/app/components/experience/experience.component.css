@@ -1,4 +1,13 @@
 h1{
     padding:  30px;
 }
+img{
+    float: right;
+}
+.text{
+    margin-left: 100px;
+}
+ul{
+    margin-left: 90px;
+}
 
