@@ -1,8 +1,22 @@
+.container-fluid{
+    padding: 0px;
+    background-color: transparent;
+}
+.row{
+    padding: 0px;
+}
+.col-xs-12{
+    padding: 0px;
+}
 h1{
     padding:  30px;
+    margin-left: 100px;
 }
 img{
-    float: right;
+    width: 130px;
+    height: 90px;
+    padding: 4px;
+    border-radius: 30%;
 }
 .text{
     margin-left: 100px;
@@ -10,4 +24,12 @@ img{
 ul{
     margin-left: 90px;
 }
+@media (max-width:766px){
+.text{
+    margin-left: 80px;
+}
+ul{
+    margin-left: 70px;
+}
 
+}

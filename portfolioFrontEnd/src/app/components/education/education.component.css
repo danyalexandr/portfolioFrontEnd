@@ -1,12 +1,26 @@
+.container-fluid{
+    padding: 0px;
+}
+.row{
+    padding: 0px;
+}
+.col-xs-12{
+    padding: 0px;
+}
 h1{
     padding: 30px;
+    margin-left: 100px;
 }
 img{
-    float: right;
+        width: 150px;
+        height: 70px;
+        padding: 4px;
+        border-radius: 30%;    
 }
 .text{
     margin-left: 100px;
 }
 p{
     margin-left: 100px;
+    margin-bottom: 5px;
 }
