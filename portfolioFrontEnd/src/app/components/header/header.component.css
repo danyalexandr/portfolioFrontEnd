@@ -12,6 +12,10 @@
   .container-fluid{
     padding: 0px;
   }
+  .login{
+    border: 3px solid #fff;
+    
+  }
   .col-xs-12{
     padding: 0px;
   }

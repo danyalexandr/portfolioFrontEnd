@@ -10,6 +10,8 @@ import { ExperienceComponent } from './components/experience/experience.componen
 import { LoginComponent } from './components/login/login.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
+import { NgChartsModule } from 'ng2-charts';
+import { PolarAreaChartComponent } from './components/polar-area-chart/polar-area-chart.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import { HomeComponent } from './components/home/home.component';
     ExperienceComponent,
     LoginComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    PolarAreaChartComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

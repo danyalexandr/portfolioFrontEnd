@@ -1,0 +1,15 @@
+.container-fluid{
+    padding: 0px;
+}
+.col-xs-12.col-md-12{
+    padding: 0px;
+}
+.chart{
+    padding: 0px;
+}
+.text {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 100px;
+    padding: 100px 0px 100px 0px;
+}
+
