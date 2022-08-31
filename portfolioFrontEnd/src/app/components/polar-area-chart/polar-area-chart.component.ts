@@ -9,11 +9,11 @@ import { ChartData, ChartEvent, ChartType } from 'chart.js';
 
 export class PolarAreaChartComponent {
   // PolarArea
-  public polarAreaChartLabels: string[] = [ 'Download Sales', 'In-Store Sales', 'Mail Sales', 'Telesales', 'Corporate Sales' ];
+  public polarAreaChartLabels: string[] = [ 'ENGLISH', 'TEAMWORK', 'ADAPTABILITY', 'JAVASCRIPT', 'JAVA' ];
   public polarAreaChartData: ChartData<'polarArea'> = {
     labels: this.polarAreaChartLabels,
     datasets: [ {
-      data: [ 300, 500, 100, 40, 120 ],
+      data: [ 60, 90, 100, 60, 50 ],
       label: 'Series 1'
     } ]
   };
