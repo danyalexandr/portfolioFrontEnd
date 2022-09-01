@@ -6,7 +6,8 @@
     -moz-osx-font-smoothing: grayscale;
   }
   .row{
-   padding: 0px;  
+   padding: 0px;
+   margin: 0px;  
 }
   .container-fluid{
     padding: 0px;
@@ -25,7 +26,15 @@
   .login:hover, .login:active{
     background-color: lightgray;
   }
-
+  .col-xs-12{
+    padding: 0px;
+  }
+  .col-xs-12.col-md-4{
+  padding: 0px;
+  }
+  .col-xs-12.col-md-8{
+    padding: 0px;
+  }
   #banner{
     margin: 0px;
     padding: 0px;
