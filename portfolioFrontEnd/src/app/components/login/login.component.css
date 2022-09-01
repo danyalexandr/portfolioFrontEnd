@@ -1,4 +1,29 @@
+.container{
+    width: 400px;
+    height: 100%;
+    box-sizing: unset;    
+    padding: 150px 300px 300px 300px;
+    background-color: grey;
+}
 form{
-    padding: 200px;
-    margin: 10px 200px 100px 200px;
+background-color: rgba(0,0,0,0.5);
+width: 400px;
+height: 600px;
+}
+.mb-3{
+    margin: 50px 30px;
+}
+.btn.btn-primary{
+margin: 100px 160px;
+background-color: grey;
+}
+.header{
+    text-align: center;
+    margin-top: 100px ;
+    color: silver;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.form-label{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: silver;
 }
