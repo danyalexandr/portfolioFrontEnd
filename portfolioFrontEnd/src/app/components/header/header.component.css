@@ -25,6 +25,7 @@
   }
   .login:hover, .login:active{
     background-color: lightgray;
+    color: darkgrey;
   }
   .col-xs-12{
     padding: 0px;

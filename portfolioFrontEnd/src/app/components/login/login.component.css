@@ -1,25 +1,32 @@
 .container{
-    width: 400px;
-    height: 100%;
+    width: 50%;
+    height: 50%;
     box-sizing: unset;    
     padding: 150px 300px 300px 300px;
     background-color: grey;
 }
 form{
-background-color: rgba(0,0,0,0.5);
-width: 400px;
+background-color: rgba(0,0,0,0.1);
+width: 50%px;
 height: 600px;
+border-radius: 7%;
+
 }
 .mb-3{
     margin: 50px 30px;
 }
 .btn.btn-primary{
 margin: 100px 160px;
-background-color: grey;
+background-color: rgba(0,0,0,0.1);
+border: 3px solid silver;
+}
+.btn.btn-primary:hover{
+background-color: #fff;
+color: grey;
 }
 .header{
     text-align: center;
-    margin-top: 100px ;
+    padding-top: 40px;
     color: silver;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
