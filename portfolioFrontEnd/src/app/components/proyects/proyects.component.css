@@ -1,5 +1,7 @@
 .container-fluid{
     padding: 0px;
+    background-color: lightgray;
+
 }
 .row{
     padding: 0px;
@@ -7,29 +9,21 @@
 .col-xs-12{
     padding: 0px;
 }
-h1{
-    padding: 30px;
-}
-p{
+
+p,a{
     margin-left: 100px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
 }
-a{
-    margin-left: 100px;
-}
+
 img{
     width: 100px;
     height: 100px;
     padding: 4px;  
 }
-.text{
+.text, ul{
     margin-left: 100px;
-    padding: 100px 0px 100px 0px;
-}
-ul{
-    margin-left: 90px;
-    margin-top: 20px;
+    padding: 10px 0px 10px 0px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.container-fluid{
-    padding: 0px;
-}

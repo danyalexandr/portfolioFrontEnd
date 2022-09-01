@@ -1,5 +1,7 @@
 .container-fluid{
     padding: 0px;
+    background-color: lightgrey ;
+
 }
 .row{
     padding: 0px;
@@ -7,15 +9,16 @@
 .col-xs-12{
     padding: 0px;
 }
-h1{
-    padding: 30px;
+h1,h2,p{
+    padding: 5px;
     margin-left: 100px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
 }
 img{
-        width: 150px;
-        height: 70px;
-        padding: 4px;
-        border-radius: 30%;    
+    width: 100px;
+    height: 100px;
+    padding: 4px;  
 }
 .text{
     margin-left: 100px;

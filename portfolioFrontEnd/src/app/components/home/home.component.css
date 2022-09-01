@@ -10,3 +10,7 @@
   .col-xs-12.col-md-4{
   padding: 0px;
   }
+  h1, h2, p, ul{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
