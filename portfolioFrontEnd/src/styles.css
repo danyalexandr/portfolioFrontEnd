@@ -4,3 +4,6 @@
     margin: 80px 0px 30px 100px;
     
 }
+.container-fluid{
+    background-color: rgba(0, 0, 0, 0.5);
+}
