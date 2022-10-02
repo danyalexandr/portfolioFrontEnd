@@ -20,7 +20,7 @@
     color: #fff;
     margin: 0px 10px;
   }
-  .login:hover, .login:active{
+  .btn.btn:hover, .login:active{
     background-color: lightgray;
     color: darkgrey;
   }

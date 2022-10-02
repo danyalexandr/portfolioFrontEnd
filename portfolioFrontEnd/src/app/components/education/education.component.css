@@ -6,6 +6,10 @@
 .row{
     padding: 0px;
 }
+
+.btn.btn{
+    margin: 0px 5px;
+}
 .col-xs-12{
     padding: 0px;
 }
