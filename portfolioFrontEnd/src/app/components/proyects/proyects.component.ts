@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProyectsComponent implements OnInit {
 
+  proyects:string = 'Proyects';
+
   constructor() { }
 
   ngOnInit(): void {

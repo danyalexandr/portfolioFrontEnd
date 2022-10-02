@@ -13,15 +13,12 @@
     padding: 0px;
     background-color: darkgray;
   }
-  .login{
-    border-radius: 10% ;
-    border: 3px solid #fff;
+  .btn.btn{
     background-color: silver;
     padding: 7px 7px;
-    text-decoration: none;
     display: inline-block;
     color: #fff;
-
+    margin: 0px 10px;
   }
   .login:hover, .login:active{
     background-color: lightgray;
@@ -99,7 +96,9 @@
     margin-left: 40px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
-
+  .mercado-match{
+    margin-left: 10px;
+  }
   
   @media (min-width: 700px){
     #perfil{
