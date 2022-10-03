@@ -17,12 +17,12 @@
     background-color: silver;
     padding: 7px 7px;
     display: inline-block;
-    color: #fff;
+    color: dimgrey;
     margin: 0px 10px;
   }
   .btn.btn:hover, .login:active{
     background-color: lightgray;
-    color: darkgrey;
+    color: #fff;
   }
   .col-xs-12{
     padding: 0px;

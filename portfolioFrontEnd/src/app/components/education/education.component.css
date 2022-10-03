@@ -8,8 +8,16 @@
 }
 
 .btn.btn{
+    background-color: silver;
+    padding: 7px 7px;
+    display: inline-block;
+    color: dimgrey;
     margin: 0px 5px;
-}
+  }
+  .btn.btn:hover, .login:active{
+    background-color: lightgray;
+    color: #fff;
+  }
 .col-xs-12{
     padding: 0px;
 }

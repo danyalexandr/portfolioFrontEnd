@@ -9,13 +9,21 @@
 .col-xs-12{
     padding: 0px;
 }
-
+.btn.btn{
+    background-color: silver;
+    padding: 7px 7px;
+    display: inline-block;
+    color: dimgrey;
+    margin: 0px 5px;
+  }
+  .btn.btn:hover, .login:active{
+    background-color: lightgray;
+    color: #fff;
+  }
 p,a{
     margin-left: 100px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
 }
-
 img{
     width: 100px;
     height: 100px;
