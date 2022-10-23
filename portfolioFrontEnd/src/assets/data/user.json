@@ -1,0 +1,34 @@
+{
+  "nombre": "Dany",
+  "apellido": "Gonzalez",
+  "titulo": "Full Stack Developer Jr",
+  "acercaDe": "En esta sección se encuentra tu foto de perfil, nombre y titulo que tienes Full Stack Developer Jr, En esta sección debes poner información profesional resumida sobre vos.",
+  "email": "test@email.com",
+  "password": "123456",
+  "educacion": [
+    {
+      "instituto": "Argentina Programa",
+      "titulo": "Full Stack Developer Jr",
+      "img": "#",
+      "inicio": "2022",
+      "fin": "2023"
+    },
+    {
+      "instituto": "Colegio Universitario de Administracion y Mercadeo",
+      "titulo": "T.S.U Administracion de Aduanas ",
+      "img": "#",
+      "inicio": "2012",
+      "fin": "2015"
+    },
+    {
+      "instituto": "U.E.P Emilio Crespo",
+      "titulo": "Bachiller en Ciencias",
+      "img": "#",
+      "inicio": "2003",
+      "fin": "2008"
+    }
+  ],
+  "esperiencia": {
+    "titulos": "hola"
+  }
+}

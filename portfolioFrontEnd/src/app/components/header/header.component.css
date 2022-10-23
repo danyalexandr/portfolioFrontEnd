@@ -16,9 +16,10 @@
   .btn.btn{
     background-color: silver;
     padding: 7px 7px;
-    display: inline-block;
+    display: inline;
     color: dimgrey;
     margin: 0px 10px;
+    
   }
   .btn.btn:hover, .login:active{
     background-color: lightgray;

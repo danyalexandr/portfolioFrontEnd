@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Router, RouterLink, RouterModule } from '@angular/router';
+import { AuthorizationService } from 'src/app/services/authorization.service';
 
 @Component({
   selector: 'app-header',
@@ -7,24 +8,25 @@ import { Router, RouterLink, RouterModule } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  displayMe = false;
+  miPortfolio:any;
 
-  aboutMe = 'About Me';
-  nombre = 'Dany Gonzalez';
-  tittle = 'Full Stack Developer Jr';
-  p2 = 'En esta sección se encuentra tu foto de perfil, nombre y titulo que tienes Full Stack Developer Jr; En esta sección debes poner información profesional resumida sobre vos.'
-
-  constructor(private router: Router) { }
-
+  constructor(private router: Router, private authorization:AuthorizationService ) { }
+  
   ngOnInit(): void {
+    this.authorization.obtenerDatos().subscribe(data =>
+      {console.log(data);
+      this.miPortfolio = data;
+      });
   }
 
-//selection no recuerdo para que esta creada!
- selection(){
+onClick(){
+  this.displayMe = true;
+//   this.router.navigate(['/login']);
+}
+
+mostrar(){
+  console.log("click!");
  }
 
- onClick(){
-  console.log("click!");
-  this.router.navigate(['/login']);
-  
- }
 }
