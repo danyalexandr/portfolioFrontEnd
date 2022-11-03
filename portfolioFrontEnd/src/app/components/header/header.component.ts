@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit,Output, EventEmitter } from '@angular/core';
 import { Router, RouterLink, RouterModule } from '@angular/router';
 import { AuthorizationService } from 'src/app/services/authorization.service';
 
@@ -10,18 +10,20 @@ import { AuthorizationService } from 'src/app/services/authorization.service';
 export class HeaderComponent implements OnInit {
   displayMe = false;
   miPortfolio:any;
-
+  @Output() btnClick = new EventEmitter();
+  
   constructor(private router: Router, private authorization:AuthorizationService ) { }
   
   ngOnInit(): void {
     this.authorization.obtenerDatos().subscribe(data =>
-      {console.log(data);
+      {
       this.miPortfolio = data;
       });
   }
 
-onClick(){
+onClick():void{
   this.displayMe = true;
+  this.btnClick.emit(this.displayMe);
 //   this.router.navigate(['/login']);
 }
 

@@ -1,7 +1,5 @@
-<div class="container-fluid"> 
-<app-header></app-header>
-<app-experience></app-experience>
-<app-education></app-education>
-<app-skills></app-skills>
-<app-proyects></app-proyects>
-</div>
+<app-header (btnClick)="homeBtnClick($event)"></app-header>
+<app-experience [displayExp]="displayHome"></app-experience>
+<app-education [displayEdu]="displayHome"></app-education>
+<app-skills [displaySkill]="displayHome"></app-skills>
+<app-proyects [displayPro]="displayHome"></app-proyects>

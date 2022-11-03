@@ -28,7 +28,42 @@
       "fin": "2008"
     }
   ],
-  "esperiencia": {
-    "titulos": "hola"
-  }
+  "esperiencia": [
+    {
+      "empresa": "Proteccion Inteligente, s.a",
+      "puesto": "Tecnico en Seguridad Electronica",
+      "descripcion":"Manteinmiento, relevamiento, etc",
+      "inicio":"diciembre 2021",
+      "fin":"Actualidad"
+    },
+    {
+      "empresa": "Intranet, s.a",
+      "puesto": "Tecnico en Obras Fijas",
+      "descripcion":"Relevamiento, Instalacion, Comicionamiento, etc",
+      "inicio":"junio 2019",
+      "fin":"Noviembre 2021"
+    },
+    {
+      "empresa": "Intranet, s.a",
+      "puesto": "Tecnico Soporte FTTH",
+      "descripcion":"Instalacion, Alta Abonados, etc",
+      "inicio":"junio 2018",
+      "fin":"Junio 2019"
+    }
+  ],
+  "proyectos": [
+    {
+      "proyecto": "Portfolio Full Stack Jr",
+      "tecnologias": "JavaScript, Html, Css, MySQL, TypeScript, Github"
+    },
+    {
+      "proyecto": "Task List",
+      "tecnologias": "JavaScript, Html, Css, TypeScript, Github"
+    },
+    {
+      "proyecto": "Data System",
+      "tecnologias": "Java, Xampp"
+    
+    }
+  ]
 }

@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthorizationService } from 'src/app/services/authorization.service';
+
 
 @Component({
   selector: 'app-skills',
@@ -8,11 +10,17 @@ import { Router } from '@angular/router';
 })
 export class SkillsComponent implements OnInit {
 
+  @Input() displaySkill:boolean = false;
+  habilidad:any;
   skills:string = 'Hard & Soft Skills';
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private authorization: AuthorizationService) { }
 
   ngOnInit(): void {
+    this.authorization.obtenerDatos().subscribe(data =>
+      {
+      this.habilidad = data;
+      });
   }
 
   onClick(){

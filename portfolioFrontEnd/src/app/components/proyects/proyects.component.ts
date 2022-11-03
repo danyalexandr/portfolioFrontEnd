@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthorizationService } from 'src/app/services/authorization.service';
 
 @Component({
   selector: 'app-proyects',
@@ -8,11 +9,17 @@ import { Router } from '@angular/router';
 })
 export class ProyectsComponent implements OnInit {
 
+  @Input() displayPro:boolean = false;
+  proyectos:any;
   proyects:string = 'Proyects';
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private authorization: AuthorizationService) { }
 
   ngOnInit(): void {
+    this.authorization.obtenerDatos().subscribe(data =>
+      {
+      this.proyectos = data;
+      });
   }
 
   onClick(){
