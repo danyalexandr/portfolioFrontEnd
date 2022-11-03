@@ -33,7 +33,12 @@
       </div>
     
       <div class="col-xs-12 col-md-4">
+        <div>
         <img src="/assets/foto.png" id="perfil" alt="" class="img-fluid"/>
+        <button class="btn btn" (click)="mostrar()" *ngIf="displayMe"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" class="mercado-match" width="16" height="16" focusable="false">
+          <path d="M14.13 1.86a3 3 0 00-4.17 0l-7 7L1 15l6.19-2 6.94-7a3 3 0 000-4.16zm-8.36 9.71l-1.35-1.34L9.64 5 11 6.35z"></path>
+        </svg></button>
+      </div>
         <p class="nombre"> <strong>{{miPortfolio.nombre}} {{miPortfolio.apellido}}</strong></p>
         <p class="p1">{{miPortfolio.titulo}} <button class="btn btn" (click)="mostrar()" *ngIf="displayMe"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" class="mercado-match" width="16" height="16" focusable="false">
           <path d="M14.13 1.86a3 3 0 00-4.17 0l-7 7L1 15l6.19-2 6.94-7a3 3 0 000-4.16zm-8.36 9.71l-1.35-1.34L9.64 5 11 6.35z"></path>
