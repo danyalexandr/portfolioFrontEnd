@@ -1,69 +1,63 @@
 {
-  "nombre": "Dany",
-  "apellido": "Gonzalez",
-  "titulo": "Full Stack Developer Jr",
-  "acercaDe": "En esta sección se encuentra tu foto de perfil, nombre y titulo que tienes Full Stack Developer Jr, En esta sección debes poner información profesional resumida sobre vos.",
-  "email": "test@email.com",
-  "password": "123456",
-  "educacion": [
-    {
+  "header": {
+    "nombre": "Dany",
+    "apellido": "Gonzalez",
+    "titulo": "Full Stack Developer Jr",
+    "acercaDe": "En esta sección se encuentra tu foto de perfil, nombre y titulo que tienes Full Stack Developer Jr, En esta sección debes poner información profesional resumida sobre vos.",
+    "email": "test@email.com",
+    "password": "123456"
+  },
+  "educacion1": {
       "instituto": "Argentina Programa",
       "titulo": "Full Stack Developer Jr",
       "img": "#",
       "inicio": "2022",
       "fin": "2023"
     },
-    {
+    "educacion2": {
       "instituto": "Colegio Universitario de Administracion y Mercadeo",
       "titulo": "T.S.U Administracion de Aduanas ",
       "img": "#",
       "inicio": "2012",
       "fin": "2015"
-    },
-    {
+    },"educacion3": {
       "instituto": "U.E.P Emilio Crespo",
       "titulo": "Bachiller en Ciencias",
       "img": "#",
       "inicio": "2003",
       "fin": "2008"
-    }
-  ],
-  "esperiencia": [
-    {
+    },
+  "esperiencia1": {
       "empresa": "Proteccion Inteligente, s.a",
       "puesto": "Tecnico en Seguridad Electronica",
-      "descripcion":"Manteinmiento, relevamiento, etc",
-      "inicio":"diciembre 2021",
-      "fin":"Actualidad"
+      "descripcion": "Manteinmiento, relevamiento, etc",
+      "inicio": "diciembre 2021",
+      "fin": "Actualidad"
     },
-    {
+    "experiencia2": {
       "empresa": "Intranet, s.a",
       "puesto": "Tecnico en Obras Fijas",
-      "descripcion":"Relevamiento, Instalacion, Comicionamiento, etc",
-      "inicio":"junio 2019",
-      "fin":"Noviembre 2021"
+      "descripcion": "Relevamiento, Instalacion, Comicionamiento, etc",
+      "inicio": "junio 2019",
+      "fin": "Noviembre 2021"
     },
-    {
+    "experiencia3": {
       "empresa": "Intranet, s.a",
       "puesto": "Tecnico Soporte FTTH",
-      "descripcion":"Instalacion, Alta Abonados, etc",
-      "inicio":"junio 2018",
-      "fin":"Junio 2019"
-    }
-  ],
-  "proyectos": [
-    {
+      "descripcion": "Instalacion, Alta Abonados, etc",
+      "inicio": "junio 2018",
+      "fin": "Junio 2019"
+    },
+  "proyectos1": {
       "proyecto": "Portfolio Full Stack Jr",
       "tecnologias": "JavaScript, Html, Css, MySQL, TypeScript, Github"
     },
-    {
+    "proyecto2": {
       "proyecto": "Task List",
       "tecnologias": "JavaScript, Html, Css, TypeScript, Github"
     },
-    {
+    "proyecto3": {
       "proyecto": "Data System",
       "tecnologias": "Java, Xampp"
-    
     }
-  ]
 }

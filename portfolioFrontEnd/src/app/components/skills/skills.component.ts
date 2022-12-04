@@ -17,10 +17,7 @@ export class SkillsComponent implements OnInit {
   constructor(private router:Router, private authorization: AuthorizationService) { }
 
   ngOnInit(): void {
-    this.authorization.obtenerDatos().subscribe(data =>
-      {
-      this.habilidad = data;
-      });
+
   }
 
   onClick(){
