@@ -7,6 +7,12 @@
     "email": "test@email.com",
     "password": "123456"
   },
+  "componente":{
+    "c1": "Experiencia",
+    "c2": "Educacion",
+    "c3": "Hard and Soft Skills",
+    "c4": "Proyectos"
+  },
   "educacion1": {
       "instituto": "Argentina Programa",
       "titulo": "Full Stack Developer Jr",
@@ -34,22 +40,22 @@
       "inicio": "diciembre 2021",
       "fin": "Actualidad"
     },
-    "experiencia2": {
+    "esperiencia2": {
       "empresa": "Intranet, s.a",
       "puesto": "Tecnico en Obras Fijas",
       "descripcion": "Relevamiento, Instalacion, Comicionamiento, etc",
       "inicio": "junio 2019",
       "fin": "Noviembre 2021"
     },
-    "experiencia3": {
+    "esperiencia3": {
       "empresa": "Intranet, s.a",
       "puesto": "Tecnico Soporte FTTH",
       "descripcion": "Instalacion, Alta Abonados, etc",
       "inicio": "junio 2018",
       "fin": "Junio 2019"
     },
-  "proyectos1": {
-      "proyecto": "Portfolio Full Stack Jr",
+  "proyectos": {
+      "proyecto1": "Portfolio Full Stack Jr",
       "tecnologias": "JavaScript, Html, Css, MySQL, TypeScript, Github"
     },
     "proyecto2": {

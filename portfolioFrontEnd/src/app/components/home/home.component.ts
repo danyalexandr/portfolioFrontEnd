@@ -6,7 +6,7 @@ import { Component, OnInit, EventEmitter } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  displayHome:boolean = true;
+  displayHome:boolean = false;
  
 
   constructor() { }

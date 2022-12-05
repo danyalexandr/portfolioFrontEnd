@@ -11,15 +11,10 @@ export class ProyectsComponent implements OnInit {
 
   @Input() displayPro:boolean = false;
   proyectos:any;
-  proyects:string = 'Proyects';
-
+  
   constructor(private router:Router, private authorization: AuthorizationService) { }
 
-  ngOnInit(): void {
-    this.authorization.obtenerDatos().subscribe(data =>
-      {
-      this.proyectos = data;
-      });
+  ngOnInit(): void {this.authorization.obtenerDatos().subscribe(data => {this.proyectos = data;});
   }
 
   onClick(){
