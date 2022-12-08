@@ -1,17 +1,37 @@
-<div class="container">
-<form>
+<div class="row my-5">
+  <div class="col-sm-11 col-md-6 col-lg-4 mx-auto my-auto card">
+<form [formGroup]="form" class="m-5">
   <h1 class="header">
     Sign In, please.
   </h1>
-  <div class="mb-3">
-      <label for="inputEmail" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+
+  <div class="form-outline mb-3">
+      <label for="inputEmail" class="form-label">Email</label>
+      <input type="email" name="inputEmail" [(ngModel)]="inputEmail" formControlName="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
+      <div *ngIf="Email?.errors && Email?.touched">
+        <p *ngIf="Email?.hasError('required')" class="text-danger">
+          El mail es requerido.
+        </p>
+        <p *ngIf="Email?.hasError('email')" class="text-danger">
+          El formato del email debe ser valido.
+        </p>
+      </div>
     </div>
-    <div class="mb-3">
-      <label for="inputPassword" class="form-label">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
+    <div class="form-outline mb-3">
+      <label for="inputPassword" class="form-label">Contraseña</label>
+      <input type="password" name="inputPassword" [(ngModel)]="inputPassword" formControlName="password" class="form-control" id="inputPassword">
+      <div *ngIf="Password?.errors && Password?.touched">
+        <p *ngIf="Password?.hasError('required')" class="text-danger">
+          La contraseña es requerida.
+        </p>
+        <p *ngIf="Password?.errors?.['minlength']" class="text-danger">
+          La contraseña debe ser de 8 o mas caracteres.
+        </p>
+      </div>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary btn-block mb-3 col-12 col-sm-12 col-md-6" (click)="btnLogin()">Iniciar sesion</button>
   </form>
+</div>  
 </div>
+
+<!---->

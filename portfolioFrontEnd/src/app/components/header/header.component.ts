@@ -12,10 +12,10 @@ export class HeaderComponent implements OnInit {
   miPortfolio:any;
   @Output() btnClick = new EventEmitter();
   
-  constructor(private router: Router, private authorization:AuthorizationService ) { }
+  constructor(private router: Router, private auth:AuthorizationService) { }
   
   ngOnInit(): void {
-    this.authorization.obtenerDatos().subscribe(data =>
+    this.auth.obtenerDatos().subscribe(data =>
       {
       this.miPortfolio = data;
       });
@@ -24,11 +24,14 @@ export class HeaderComponent implements OnInit {
 onClick():void{
   this.displayMe = true;
   this.btnClick.emit(this.displayMe);
-//   this.router.navigate(['/login']);
+ //this.router.navigate(['/login']);
 }
 
-mostrar(){
-  console.log("click!");
+ public get isLogin():boolean{
+  return this.auth.isUserLogin();
  }
 
+ public btnLogout():void{
+  this.auth.logout();
+ }
 }
