@@ -9,15 +9,14 @@ import { AuthorizationService } from 'src/app/services/authorization.service';
 })
 export class ProyectsComponent implements OnInit {
 
-  @Input() displayPro:boolean = false;
   proyectos:any;
   
-  constructor(private router:Router, private authorization: AuthorizationService) { }
+  constructor(private router:Router, private auth: AuthorizationService) { }
 
-  ngOnInit(): void {this.authorization.obtenerDatos().subscribe(data => {this.proyectos = data;});
+  ngOnInit(): void {this.auth.obtenerDatos().subscribe(data => {this.proyectos = data;});
   }
 
-  onClick(){
-    this.router.navigate(['/login']);
+  public get isLogin():boolean{
+    return this.auth.isUserLogin();
   }
 }

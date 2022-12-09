@@ -9,19 +9,16 @@ import { AuthorizationService } from 'src/app/services/authorization.service';
 })
 export class ExperienceComponent implements OnInit {
   
-  @Input() displayExp:boolean = false;
   miPortfolio:any;
 
-  constructor(private router:Router, private authorization: AuthorizationService) { }
+  constructor(private router:Router, private auth: AuthorizationService) { }
 
   ngOnInit(): void {
-    this.authorization.obtenerDatos().subscribe(data => {this.miPortfolio = data;});
+    this.auth.obtenerDatos().subscribe(data => {this.miPortfolio = data;});
 
   }
-  onClick(){
-    console.log("click!");
-  
-    //this.router.navigate(['/login']);
-   }
+  public get isLogin():boolean{
+    return this.auth.isUserLogin();
+  }
   
 }

@@ -8,10 +8,9 @@ import { AuthorizationService } from 'src/app/services/authorization.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  displayMe = false;
-  miPortfolio:any;
-  @Output() btnClick = new EventEmitter();
   
+  miPortfolio:any;
+    
   constructor(private router: Router, private auth:AuthorizationService) { }
   
   ngOnInit(): void {
@@ -19,19 +18,15 @@ export class HeaderComponent implements OnInit {
       {
       this.miPortfolio = data;
       });
-  }
-
-onClick():void{
-  this.displayMe = true;
-  this.btnClick.emit(this.displayMe);
- //this.router.navigate(['/login']);
+    }
+    
+    //this.btnClick.emit(this.displayMe);
+    
+    public get isLogin():boolean{
+  return this.auth.isUserLogin();
 }
 
- public get isLogin():boolean{
-  return this.auth.isUserLogin();
- }
-
- public btnLogout():void{
+public btnLogout():void{
   this.auth.logout();
  }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
+import { AuthorizationService } from 'src/app/services/authorization.service';
 
 @Component({
   selector: 'app-home',
@@ -9,15 +10,12 @@ export class HomeComponent implements OnInit {
   displayHome:boolean = false;
  
 
-  constructor() { }
+  constructor(private auth:AuthorizationService) { }
 
   ngOnInit(): void {
   }
 
-  homeBtnClick(evento: boolean){
-    console.log(evento + " este es un evento en HOME");
-    this.displayHome = evento;
-    console.log(this.displayHome);
-
+  public get isLogin():boolean{
+    return this.auth.isUserLogin();
   }
 }

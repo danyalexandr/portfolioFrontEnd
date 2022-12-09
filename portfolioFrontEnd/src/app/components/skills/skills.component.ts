@@ -10,18 +10,15 @@ import { AuthorizationService } from 'src/app/services/authorization.service';
 })
 export class SkillsComponent implements OnInit {
 
-  @Input() displaySkill:boolean = false;
   habilidad:any;
-  
 
-  constructor(private router:Router, private authorization: AuthorizationService) { }
+  constructor(private router:Router, private auth: AuthorizationService) { }
 
   ngOnInit(): void {
-    this.authorization.obtenerDatos().subscribe(data => {this.habilidad = data;});
+    this.auth.obtenerDatos().subscribe(data => {this.habilidad = data;});
 
   }
-
-  onClick(){
-    this.router.navigate(['/login']);
+  public get isLogin():boolean{
+    return this.auth.isUserLogin();
   }
 }
