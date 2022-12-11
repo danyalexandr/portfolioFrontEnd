@@ -13,7 +13,11 @@ import { HomeComponent } from './components/home/home.component';
 import { NgChartsModule } from 'ng2-charts';
 import { PolarAreaChartComponent } from './components/polar-area-chart/polar-area-chart.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddExpComponent } from './components/experience/add-exp.component';
+import { AddEduComponent } from './components/education/add-edu.component';
+import { AddProComponent } from './components/proyects/add-pro.component';
+import { AddSkillComponent } from './components/skills/add-skill.component';
 
 @NgModule({
   declarations: [
@@ -25,14 +29,19 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     HeaderComponent,
     HomeComponent,
-    PolarAreaChartComponent
+    PolarAreaChartComponent,
+    AddExpComponent,
+    AddEduComponent,
+    AddProComponent,
+    AddSkillComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgChartsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

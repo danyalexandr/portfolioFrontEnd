@@ -1,32 +1,39 @@
-import { Component, OnInit,Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router, RouterLink, RouterModule } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { Persona } from 'src/app/model/persona.model';
 import { AuthorizationService } from 'src/app/services/authorization.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  
-  miPortfolio:any;
-    
-  constructor(private router: Router, private auth:AuthorizationService) { }
-  
-  ngOnInit(): void {
-    this.auth.obtenerDatos().subscribe(data =>
-      {
-      this.miPortfolio = data;
-      });
-    }
-    
-    //this.btnClick.emit(this.displayMe);
-    
-    public get isLogin():boolean{
-  return this.auth.isUserLogin();
-}
+  miPortfolio: any;
+  persona:Persona = new Persona("","","","","");
 
-public btnLogout():void{
-  this.auth.logout();
- }
+  constructor(private router: Router, private auth: AuthorizationService) {}
+
+  ngOnInit(): void {
+    this.auth.obtenerDatos().subscribe((data) => {
+      this.miPortfolio = data;
+    });
+
+    //prueba api
+      this.auth.obtenerPersona().subscribe((data) =>{
+        this.persona = data;      
+      });
+      }
+
+  
+  //this.btnClick.emit(this.displayMe);
+
+  public get isLogin(): boolean {
+    return this.auth.isUserLogin();
+  }
+
+  public btnLogout(): void {
+    this.auth.logout();
+  }
 }
