@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddEduComponent } from './components/education/add-edu.component';
+import { EditEduComponent } from './components/education/edit-edu.component';
 import { AddExpComponent } from './components/experience/add-exp.component';
+import { EditExpComponent } from './components/experience/edit-exp.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { AddProComponent } from './components/proyects/add-pro.component';
+import { EditProComponent } from './components/proyects/edit-pro.component';
 import { AddSkillComponent } from './components/skills/add-skill.component';
+import { EditSkillComponent } from './components/skills/edit-skill.component';
 
 const routes: Routes = [
   {path:'home', component:HomeComponent},
@@ -15,6 +19,10 @@ const routes: Routes = [
   {path:'addEdu', component:AddEduComponent},
   {path:'addSkill', component:AddSkillComponent},
   {path:'addPro', component:AddProComponent},
+  {path: 'editSkill', component:EditSkillComponent},
+  {path: 'editExp', component:EditExpComponent},
+  {path: 'editPro', component:EditProComponent},
+  {path: 'editEdu', component:EditEduComponent}
 
 ];
 

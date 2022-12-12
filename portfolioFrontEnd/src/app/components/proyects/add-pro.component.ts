@@ -12,4 +12,7 @@ export class AddProComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onClick(){
+    
+  }
 }

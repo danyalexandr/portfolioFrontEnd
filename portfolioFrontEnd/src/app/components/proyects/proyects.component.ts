@@ -19,4 +19,7 @@ export class ProyectsComponent implements OnInit {
   public get isLogin():boolean{
     return this.auth.isUserLogin();
   }
+  public borrar(){
+    alert("proyecto borrado");
+  }
 }

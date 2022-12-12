@@ -2,7 +2,7 @@
   "email": "test@email.com",
   "password": "123456789",
   "type": "Bearer",
-  "token":"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsZ2ltZW5leiIsImV4cCI6MTY3MDU0MzQzNSwiaWF0IjoxNjcwNTI1NDM1fQ.HtSn26OHZESLvtzL8BVMTVejpHn_O5Gkk4gscLug87-DsZMgoczT9l9B6PUtOIfn2l3s3WrgMD7XHHdCfhvhpQ",
+  "token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsZ2ltZW5leiIsImV4cCI6MTY3MDU0MzQzNSwiaWF0IjoxNjcwNTI1NDM1fQ.HtSn26OHZESLvtzL8BVMTVejpHn_O5Gkk4gscLug87-DsZMgoczT9l9B6PUtOIfn2l3s3WrgMD7XHHdCfhvhpQ",
 
   "header": {
     "nombre": "Dany",
@@ -10,63 +10,68 @@
     "titulo": "Full Stack Developer Jr",
     "acercaDe": "En esta sección se encuentra tu foto de perfil, nombre y titulo que tienes Full Stack Developer Jr, En esta sección debes poner información profesional resumida sobre vos."
   },
-  "componente":{
+  "componente": {
     "c1": "Experiencia",
     "c2": "Educacion",
     "c3": "Hard and Soft Skills",
     "c4": "Proyectos"
   },
   "educacion1": {
-      "instituto": "Argentina Programa",
-      "titulo": "Full Stack Developer Jr",
-      "img": "#",
-      "inicio": "2022",
-      "fin": "2023"
-    },
-    "educacion2": {
-      "instituto": "Colegio Universitario de Administracion y Mercadeo",
-      "titulo": "T.S.U Administracion de Aduanas ",
-      "img": "#",
-      "inicio": "2012",
-      "fin": "2015"
-    },"educacion3": {
-      "instituto": "U.E.P Emilio Crespo",
-      "titulo": "Bachiller en Ciencias",
-      "img": "#",
-      "inicio": "2003",
-      "fin": "2008"
-    },
+    "instituto": "Argentina Programa",
+    "titulo": "Full Stack Developer Jr",
+    "img": "#",
+    "comment": "3ra Edicion",
+    "lugar":"Buenos Aires, Argentina",
+    "inicio": "2022",
+    "fin": "2023"
+  },
+  "educacion2": {
+    "instituto": "Colegio Universitario de Administracion y Mercadeo",
+    "titulo": "T.S.U Administracion de Aduanas ",
+    "lugar":"Caracas, Venezuela",
+    "img": "#",
+    "inicio": "2012",
+    "fin": "2015"
+  },
+  "educacion3": {
+    "instituto": "U.E.P Emilio Crespo",
+    "titulo": "Bachiller en Ciencias",
+    "lugar":"Miranda, Venezuela",
+    "img": "#",
+    "inicio": "2003",
+    "fin": "2008"
+  },
   "esperiencia1": {
-      "empresa": "Proteccion Inteligente, s.a",
-      "puesto": "Tecnico en Seguridad Electronica",
-      "descripcion": "Manteinmiento, relevamiento, etc",
-      "inicio": "diciembre 2021",
-      "fin": "Actualidad"
-    },
-    "esperiencia2": {
-      "empresa": "Intranet, s.a",
-      "puesto": "Tecnico en Obras Fijas",
-      "descripcion": "Relevamiento, Instalacion, Comicionamiento, etc",
-      "inicio": "junio 2019",
-      "fin": "Noviembre 2021"
-    },
-    "esperiencia3": {
-      "empresa": "Intranet, s.a",
-      "puesto": "Tecnico Soporte FTTH",
-      "descripcion": "Instalacion, Alta Abonados, etc",
-      "inicio": "junio 2018",
-      "fin": "Junio 2019"
-    },
+    "empresa": "Proteccion Inteligente, s.a",
+    "puesto": "Tecnico en Seguridad Electronica",
+    "descripcion": "Manteinmiento, relevamiento, etc",
+    "inicio": "diciembre 2021",
+    "fin": "Actualidad"
+  },
+  "esperiencia2": {
+    "empresa": "Intranet, s.a",
+    "puesto": "Tecnico en Obras Fijas",
+    "descripcion": "Relevamiento, Instalacion, Comicionamiento, etc",
+    "inicio": "junio 2019",
+    "fin": "Noviembre 2021"
+  },
+  "esperiencia3": {
+    "empresa": "Intranet, s.a",
+    "puesto": "Tecnico Soporte FTTH",
+    "descripcion": "Instalacion, Alta Abonados, etc",
+    "inicio": "junio 2018",
+    "fin": "Junio 2019"
+  },
   "proyectos": {
-      "proyecto1": "Portfolio Full Stack Jr",
-      "tecnologias": "JavaScript, Html, Css, MySQL, TypeScript, Github"
-    },
-    "proyecto2": {
-      "proyecto": "Task List",
-      "tecnologias": "JavaScript, Html, Css, TypeScript, Github"
-    },
-    "proyecto3": {
-      "proyecto": "Data System",
-      "tecnologias": "Java, Xampp"
-    }
+    "proyecto1": "Portfolio Full Stack Jr",
+    "tecnologias": "JavaScript, Html, Css, MySQL, TypeScript, Github"
+  },
+  "proyecto2": {
+    "proyecto": "Task List",
+    "tecnologias": "JavaScript, Html, Css, TypeScript, Github"
+  },
+  "proyecto3": {
+    "proyecto": "Data System",
+    "tecnologias": "Java, Xampp"
+  }
 }

@@ -18,6 +18,10 @@ import { AddExpComponent } from './components/experience/add-exp.component';
 import { AddEduComponent } from './components/education/add-edu.component';
 import { AddProComponent } from './components/proyects/add-pro.component';
 import { AddSkillComponent } from './components/skills/add-skill.component';
+import { EditExpComponent } from './components/experience/edit-exp.component';
+import { EditEduComponent } from './components/education/edit-edu.component';
+import { EditProComponent } from './components/proyects/edit-pro.component';
+import { EditSkillComponent } from './components/skills/edit-skill.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +37,11 @@ import { AddSkillComponent } from './components/skills/add-skill.component';
     AddExpComponent,
     AddEduComponent,
     AddProComponent,
-    AddSkillComponent
+    AddSkillComponent,
+    EditExpComponent,
+    EditEduComponent,
+    EditProComponent,
+    EditSkillComponent
   ],
   imports: [
     BrowserModule,

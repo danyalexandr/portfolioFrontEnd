@@ -6,29 +6,29 @@
     </h2>
   
     <div class="form-outline mb-3">
-        <label for="inputEmail" class="form-label">Puesto</label>
-        <input type="email" name="inputEmail" formControlName="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
+        <label for="inputP" class="form-label">Puesto:</label>
+        <input type="text" name="inputP" formControlName="puesto" class="form-control" id="inputP" aria-describedby="">
      
         <div class="form-outline mb-3">
-            <label for="inputEmail" class="form-label">Empresa</label>
-            <input type="email" name="inputEmail" formControlName="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
+            <label for="inputE" class="form-label">Empresa:</label>
+            <input type="text" name="inputE" formControlName="empresa" class="form-control" id="inputE" aria-describedby="">
           </div>
 
           <div class="form-outline mb-3">
-            <label for="inputEmail" class="form-label">Fecha de inicio</label>
-            <input type="email" name="inputEmail" formControlName="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
+            <label for="inputI" class="form-label">Fecha de inicio:</label>
+            <input type="text" name="inputI" formControlName="inicio" class="form-control" id="inputI" aria-describedby="">
           </div>
       </div>
       <div class="form-outline mb-3">
-        <label for="inputPassword" class="form-label">Fecha de Fin</label>
-        <input type="password" name="inputPassword" formControlName="password" class="form-control" id="inputPassword">
+        <label for="inputF" class="form-label">Fecha de Fin:</label>
+        <input type="text" name="inputF" formControlName="final" class="form-control" id="inputF">
       </div>
 
       <div class="form-outline mb-3">
-        <label for="inputEmail" class="form-label">Lugar de trabajo</label>
-        <input type="email" name="inputEmail" formControlName="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
+        <label for="inputL" class="form-label">Lugar de trabajo:</label>
+        <input type="text" name="inputL" formControlName="lugar" class="form-control" id="inputL" aria-describedby="">
       </div>
-      <button type="submit" class="btn btn-success mb-3 col-12 col-sm-12 col-md-6" >Agregar</button>
+      <button type="submit" class="btn btn-success mb-3 col-12 col-sm-12 col-md-6" (ngSubmit)="onClick()">Agregar</button>
     </form>
   </div>  
   </div>

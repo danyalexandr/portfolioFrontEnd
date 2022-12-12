@@ -22,4 +22,7 @@ export class EducationComponent implements OnInit {
     return this.auth.isUserLogin();
   }
 
+  public borrar(){
+    alert("seguro desea borrar?")
+  }
 }

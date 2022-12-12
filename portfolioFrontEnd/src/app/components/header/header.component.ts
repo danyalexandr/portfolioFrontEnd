@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router, RouterLink, RouterModule } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { Persona } from 'src/app/model/persona.model';
+import { Persona } from 'src/app/model/persona';
 import { AuthorizationService } from 'src/app/services/authorization.service';
 
 @Component({

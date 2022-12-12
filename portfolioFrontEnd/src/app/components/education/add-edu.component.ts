@@ -12,4 +12,8 @@ export class AddEduComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onClick(){
+    
+  }
+
 }

@@ -4,7 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Token } from '@angular/compiler';
-import { Persona } from '../model/persona.model';
+import { Persona } from '../model/persona';
 import { Experiencia } from '../model/experiencia';
 
 @Injectable({
@@ -17,8 +17,7 @@ export class AuthorizationService {
 
   private strUrlApi:string;
   private baseURL = "http://localhost:8080/persona/traer";
-  expURL = 'http://localhost:8080/explab';
-  
+    
   constructor(private http: HttpClient, private router: Router) { 
     this.strUrlApi = '../assets/data/user.json';
   }
@@ -46,19 +45,12 @@ export class AuthorizationService {
     return this.http.get('../assets/data/user.json');
   }
 
+  //retornar desde apirest
   public obtenerPersona(): Observable <Persona> {
     return this.http.get<Persona>('http://localhost:8080/persona/traer/perfil'); 
 
   }
 
-  public lista(): Observable<Experiencia[]>{
-    return this.http.get<Experiencia[]>('http://localhost:8080/explab/lista');
-  }
-
-  public save(experiencia:Experiencia):Observable<any>{
-    return this.http.post<any>('http://localhost:8080/explab/create', experiencia);
-  }
-
-  
+   
 }
  

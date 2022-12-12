@@ -12,4 +12,7 @@ export class AddSkillComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onClick(){
+    
+  }
 }

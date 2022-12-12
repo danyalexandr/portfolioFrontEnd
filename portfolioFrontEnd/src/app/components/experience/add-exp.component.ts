@@ -12,4 +12,7 @@ export class AddExpComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onClick(){
+    
+  }
 }
