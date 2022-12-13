@@ -17,11 +17,11 @@ export class ExperienciaSE {
   }
 
   public detail(id:number): Observable<Experiencia>{
-    return this.http.get<Experiencia>(this.expURL + `/detail/${id}`);
+    return this.http.get<Experiencia>(`http://localhost:8080/explaboral/detail/${id}`);
   }
 
   public save(experiencia:Experiencia):Observable<any>{
-    return this.http.post<any>('http://localhost:8080/explab/create', experiencia);
+    return this.http.post<any>('http://localhost:8080/explaboral/create', experiencia);
   }
 
   public update(id:number, experiencia:Experiencia):Observable<any>{
@@ -29,6 +29,6 @@ export class ExperienciaSE {
   }
 
   public delete(id:number):Observable<any>{
-    return this.http.delete<any>(this.expURL + `/delete/${id}`);
+    return this.http.delete<any>(`http://localhost:8080/explaboral/borrar/${id}`);
   }
 }

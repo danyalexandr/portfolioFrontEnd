@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { Experiencia } from 'src/app/model/experiencia';
 import { AuthorizationService } from 'src/app/services/authorization.service';
@@ -17,17 +17,24 @@ export class ExperienceComponent implements OnInit {
               private expSer:ExperienciaSE) { }
 
   ngOnInit(): void {
+   this.cargarExperiencia(); 
     this.auth.obtenerDatos().subscribe(data => {this.miPortfolio = data});
-
-    this.expSer.lista().subscribe(data => {this.experiencia = data});
   }
+
   public get isLogin():boolean{
     return this.auth.isUserLogin();
   }
+  
+  cargarExperiencia():void{
+    this.expSer.lista().subscribe(data => {this.experiencia = data});
+  }
 
-
-  public borrar(){
-    alert("seguro desea borrar?");
+borrar(id?:number): void{
+    if(id != undefined){
+      this.expSer.delete(id).subscribe(data => {
+        this.cargarExperiencia();
+      },err => alert(err + "no se pudo borrar"));
+    }
     
   }
 }

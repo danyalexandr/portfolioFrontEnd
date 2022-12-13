@@ -1,34 +1,21 @@
 <div class="row my-5">
     <div class="col-sm-11 col-md-6 col-lg-4 mx-auto my-auto card">
-  <form class="m-5">
+  <form (ngSubmit)="onClick()" class="m-5">
     <h2 class="header">
       Agregar nueva experiencia
     </h2>
   
     <div class="form-outline mb-3">
-        <label for="inputP" class="form-label">Puesto:</label>
-        <input type="text" name="inputP" formControlName="puesto" class="form-control" id="inputP" aria-describedby="">
+      <label for="nombreE" class="form-label">Empresa:</label>
+      <input type="text" name="nombreE"  class="form-control" id="nombreE" [(ngModel)]="nombreE">
+    </div>
+    
+    <div class="form-outline mb-3">
+        <label for="descripcionE" class="form-label">Puesto:</label>
+        <input type="text" name="descripcionE"  class="form-control" id="descripcionE" [(ngModel)]="descripcionE">
+      </div>
      
-        <div class="form-outline mb-3">
-            <label for="inputE" class="form-label">Empresa:</label>
-            <input type="text" name="inputE" formControlName="empresa" class="form-control" id="inputE" aria-describedby="">
-          </div>
-
-          <div class="form-outline mb-3">
-            <label for="inputI" class="form-label">Fecha de inicio:</label>
-            <input type="text" name="inputI" formControlName="inicio" class="form-control" id="inputI" aria-describedby="">
-          </div>
-      </div>
-      <div class="form-outline mb-3">
-        <label for="inputF" class="form-label">Fecha de Fin:</label>
-        <input type="text" name="inputF" formControlName="final" class="form-control" id="inputF">
-      </div>
-
-      <div class="form-outline mb-3">
-        <label for="inputL" class="form-label">Lugar de trabajo:</label>
-        <input type="text" name="inputL" formControlName="lugar" class="form-control" id="inputL" aria-describedby="">
-      </div>
-      <button type="submit" class="btn btn-success mb-3 col-12 col-sm-12 col-md-6" (ngSubmit)="onClick()">Agregar</button>
+    <button type="submit" class="btn btn-success mb-3 col-12 col-sm-12 col-md-6" (ngSubmit)="onClick()">Agregar</button>
     </form>
   </div>  
   </div>
