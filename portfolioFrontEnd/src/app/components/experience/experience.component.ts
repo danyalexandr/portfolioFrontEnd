@@ -11,14 +11,14 @@ import { ExperienciaSE } from 'src/app/services/experienciaSE.service';
 })
 export class ExperienceComponent implements OnInit {
   experiencia:Experiencia[] = [];
-  miPortfolio:any;
+ // miPortfolio:any;
 
   constructor(private router:Router, private auth: AuthorizationService, 
               private expSer:ExperienciaSE) { }
 
   ngOnInit(): void {
    this.cargarExperiencia(); 
-    this.auth.obtenerDatos().subscribe(data => {this.miPortfolio = data});
+    //this.auth.obtenerDatos().subscribe(data => {this.miPortfolio = data});
   }
 
   public get isLogin():boolean{
