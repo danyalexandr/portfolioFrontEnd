@@ -29,7 +29,7 @@ export class ExperienceComponent implements OnInit {
     this.expSer.lista().subscribe(data => {this.experiencia = data});
   }
 
-borrar(id?:number): void{
+borrar(id:number): void{
     if(id != undefined){
       this.expSer.delete(id).subscribe(data => {
         this.cargarExperiencia();

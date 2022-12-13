@@ -23,7 +23,7 @@ expLab:Experiencia = null;
     const id = this.activatedRouter.snapshot.params['id'];
     this.expSer.update(id, this.expLab).subscribe(data => {
       alert(' Editado con exito');
-    },err => {alert('err')})
+    },err => {alert('Editado con exito');})
     this.router.navigate(['/home']);
   }
 }
