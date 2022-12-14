@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Educacion } from 'src/app/model/educacion';
+import { EducacionSE } from 'src/app/services/educacionSE.service';
 
 @Component({
   selector: 'app-add-edu',
@@ -7,13 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddEduComponent implements OnInit {
 
-  constructor() { }
+  institucion:string;
+  carrera:string;
+  fechaInicio:string;
+  fechaFin:string;
+
+  constructor(private eduSer: EducacionSE, private router:Router) { }
 
   ngOnInit(): void {
   }
 
-  onClick(){
-    
-  }
+  onClick():void{
+    const exp = new Educacion(this.institucion, this.carrera, this.fechaInicio, this.fechaFin);
+    this.eduSer.save(exp).subscribe(data => {alert("experiencia añadida OK");
+     });
+     this.router.navigate(["/"]);
+    }
 
 }

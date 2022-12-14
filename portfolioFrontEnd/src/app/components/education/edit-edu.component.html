@@ -1,1 +1,33 @@
-<p>edit-edu works!</p>
+<div class="container" *ngIf="eduCarr">
+    <div class="row my-5">
+        <div class="col-sm-11 col-md-6 col-lg-4 mx-auto my-auto card">
+      <form (ngSubmit)="onClick()" class="m-5">
+        <h2 class="header">
+          Editar educacion
+        </h2>
+      
+        <div class="form-outline mb-3">
+          <label for="institucion" class="form-label">Institucion:</label>
+          <input type="text" name="institucion"  class="form-control" id="institucion" [(ngModel)]="eduCarr.institucion">
+        </div>
+        
+        <div class="form-outline mb-3">
+            <label for="carrera" class="form-label">Carrera:</label>
+            <input type="text" name="carrera"  class="form-control" id="carrera" [(ngModel)]="eduCarr.carrera">
+          </div>
+
+          <div class="form-outline mb-3">
+            <label for="fechaInicio" class="form-label">Fecha inicio:</label>
+            <input type="text" name="fechaInicio"  class="form-control" id="fechaInicio" [(ngModel)]="eduCarr.fechaInicio">
+          </div>
+
+          <div class="form-outline mb-3">
+            <label for="fechaFin" class="form-label">Fecha fin:</label>
+            <input type="text" name="fechaFin"  class="form-control" id="fechaFin" [(ngModel)]="eduCarr.fechaFin">
+          </div>
+         
+        <button type="submit" class="btn btn-success mb-3 col-12 col-sm-12 col-md-6" (ngSubmit)="onClick()">Editar</button>
+        </form>
+      </div>  
+      </div>
+    </div>

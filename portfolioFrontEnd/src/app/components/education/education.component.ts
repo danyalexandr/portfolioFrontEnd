@@ -11,30 +11,31 @@ import { EducacionSE } from 'src/app/services/educacionSE.service';
 })
 export class EducationComponent implements OnInit {
 
-  edu:Educacion[] = [];
-  educacion:any;
+  educacion:Educacion[] = [];
+  //educacion:any;
  
 
   constructor(private router:Router, private auth: AuthorizationService, 
               private eduSer:EducacionSE) { }
 
   ngOnInit(): void {
-    this.auth.obtenerDatos().subscribe(data =>{this.educacion = data;});
+    this.cargarEducacion();
+    //this.auth.obtenerDatos().subscribe(data =>{this.educacion = data;});
   }
 
   public get isLogin():boolean{
     return this.auth.isUserLogin();
   }
 
-  cargarExperiencia():void{
-    this.eduSer.lista().subscribe(data => {this.edu = data});
+  cargarEducacion():void{
+    this.eduSer.lista().subscribe(data => {this.educacion = data});
   }
 
-  borrar(id?:number): void{
+  borrar(id:number): void{
     if(id != undefined){
       this.eduSer.delete(id).subscribe(data => {
-        this.cargarExperiencia();
-      },err => alert(err + "no se pudo borrar"));
+        this.cargarEducacion();
+      },err => alert(err + "borrado correctamente"));
     }
     
   }
