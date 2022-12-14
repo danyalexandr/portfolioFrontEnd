@@ -19,6 +19,7 @@ export class EditEduComponent implements OnInit {
     }, err => {alert(err + this.eduCarr + `/updateedu/${id}`); this.router.navigate([""])});
   }
 
+  //revisar porque no funciona el metodo para editar (en postman anda bien)
   onClick():void{
     const id = this.aRouter.snapshot.params['id'];
     this.eduSer.update(id, this.eduCarr).subscribe(data => {

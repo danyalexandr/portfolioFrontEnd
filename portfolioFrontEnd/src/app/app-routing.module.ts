@@ -22,7 +22,7 @@ const routes: Routes = [
   {path: 'editSkill', component:EditSkillComponent},
   {path: 'editExp/:id', component:EditExpComponent},
   {path: 'editPro', component:EditProComponent},
-  {path: 'editEdu', component:EditEduComponent}
+  {path: 'editEdu/:id', component:EditEduComponent}
 
 ];
 

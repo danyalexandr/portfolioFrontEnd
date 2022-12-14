@@ -8,8 +8,16 @@ import { ChartData, ChartEvent, ChartType } from 'chart.js';
 })
 
 export class PolarAreaChartComponent {
+
+  english:string = "English";
+  teamwork:string = "Team work";
+  adaptabilidad:string = "Adaptabilidad";
+  javaScript:string = "JavaScript";
+  java:string = "Java";
+
+
   // PolarArea
-  public polarAreaChartLabels: string[] = [ 'ENGLISH', 'TEAMWORK', 'ADAPTABILITY', 'JAVASCRIPT', 'JAVA' ];
+  public polarAreaChartLabels: string[] = [ this.english, this.teamwork, this.adaptabilidad, this.javaScript, this.java ];
   public polarAreaChartData: ChartData<'polarArea'> = {
     labels: this.polarAreaChartLabels,
     datasets: [ {
