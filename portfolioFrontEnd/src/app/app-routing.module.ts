@@ -4,6 +4,7 @@ import { AddEduComponent } from './components/education/add-edu.component';
 import { EditEduComponent } from './components/education/edit-edu.component';
 import { AddExpComponent } from './components/experience/add-exp.component';
 import { EditExpComponent } from './components/experience/edit-exp.component';
+import { EditHeaderComponent } from './components/header/edit-header.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { AddProComponent } from './components/proyects/add-pro.component';
@@ -21,8 +22,9 @@ const routes: Routes = [
   {path:'addPro', component:AddProComponent},
   {path: 'editSkill', component:EditSkillComponent},
   {path: 'editExp/:id', component:EditExpComponent},
-  {path: 'editPro', component:EditProComponent},
-  {path: 'editEdu/:id', component:EditEduComponent}
+  {path: 'editPro/:id', component:EditProComponent},
+  {path: 'editEdu/:id', component:EditEduComponent},
+  {path: 'editHeader', component:EditHeaderComponent}
 
 ];
 

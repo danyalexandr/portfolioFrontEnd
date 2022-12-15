@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Token } from '@angular/compiler';
 import { Persona } from '../model/persona';
-import { Experiencia } from '../model/experiencia';
+
 
 @Injectable({
   providedIn: 'root'
@@ -16,11 +16,9 @@ export class AuthorizationService {
   pwd:string = "123456789";
 
   private strUrlApi:string;
-  private baseURL = "http://localhost:8080/persona/traer";
-    
-  constructor(private http: HttpClient, private router: Router) { 
-    this.strUrlApi = '../assets/data/user.json';
-  }
+      
+  constructor(private http: HttpClient, private router: Router) { }
+
   public loginSimple(email:string, pwd:string): void{
     this.http.get(this.strUrlApi).subscribe((response:any) => {if(response.token !=null){
       localStorage.setItem('token', response.token);

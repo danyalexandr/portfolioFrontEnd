@@ -1,5 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Router, RouterLink, RouterModule } from '@angular/router';
+import { Component, OnInit} from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Persona } from 'src/app/model/persona';
 import { AuthorizationService } from 'src/app/services/authorization.service';
@@ -10,16 +10,13 @@ import { AuthorizationService } from 'src/app/services/authorization.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  miPortfolio: any;
+  //miPortfolio: any;
   persona:Persona = new Persona("","","","","");
 
   constructor(private router: Router, private auth: AuthorizationService) {}
 
   ngOnInit(): void {
-    this.auth.obtenerDatos().subscribe((data) => {
-      this.miPortfolio = data;
-    });
-
+   
     //prueba api
       this.auth.obtenerPersona().subscribe((data) =>{
         this.persona = data;      
@@ -27,13 +24,12 @@ export class HeaderComponent implements OnInit {
       }
 
   
-  //this.btnClick.emit(this.displayMe);
-
   public get isLogin(): boolean {
     return this.auth.isUserLogin();
   }
 
   public btnLogout(): void {
     this.auth.logout();
+    this.router.navigate(["/home"]);
   }
 }

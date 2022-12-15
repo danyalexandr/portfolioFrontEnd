@@ -1,18 +1,18 @@
 <div class="row my-5">
     <div class="col-sm-11 col-md-6 col-lg-4 mx-auto my-auto card">
-  <form class="m-5">
+  <form (ngSubmit)="onClick()" class="m-5">
     <h2 class="header">
       Agregar nuevo proyecto
     </h2>
   
     <div class="form-outline mb-3">
-        <label for="inputTitulo" class="form-label">Proyecto</label>
-        <input type="text" name="inputTitulo" formControlName="nombre" class="form-control" id="inputTitulo" aria-describedby="">
+        <label for="nombre" class="form-label">Proyecto</label>
+        <input type="text" name="nombre" class="form-control" id="nombre" [(ngModel)]="nombre">
      
       </div>
       <div class="form-outline mb-3">
-        <label for="inputDescri" class="form-label">Descripcion</label>
-        <input type="text" name="inputDescri" formControlName="descripcion" class="form-control" id="inputDescri">
+        <label for="descripcion" class="form-label">Descripcion</label>
+        <input type="text" name="descripcion" class="form-control" id="descripcion" [(ngModel)]="descripcion">
         
       </div>
       <button type="submit" class="btn btn-success mb-3 col-12 col-sm-12 col-md-6" (ngSubmit)="onClick()">Agregar</button>
