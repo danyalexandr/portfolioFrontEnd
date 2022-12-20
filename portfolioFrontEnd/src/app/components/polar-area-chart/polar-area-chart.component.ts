@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ChartData, ChartEvent, ChartType } from 'chart.js';
+import { Skill } from 'src/app/model/skill';
+import { AuthorizationService } from 'src/app/services/authorization.service';
+import { SkillSE } from 'src/app/services/skillSE.service';
 
 @Component({
   selector: 'app-polar-area-chart',
@@ -9,15 +13,35 @@ import { ChartData, ChartEvent, ChartType } from 'chart.js';
 
 export class PolarAreaChartComponent {
 
+  skill:Skill[] = [];
   english:string = "English";
   teamwork:string = "Team work";
   adaptabilidad:string = "Adaptabilidad";
   javaScript:string = "JavaScript";
   java:string = "Java";
 
+  constructor(private router:Router, private skillSer:SkillSE, private auth: AuthorizationService) { }
+
+  gOnInit(): void {
+
+    this.cargarProyectos();
+  }
+
+  public get isLogin():boolean{
+    return this.auth.isUserLogin();
+  }
+
+  cargarProyectos():void{
+    this.skillSer.lista().subscribe(data => {this.skill = data});
+  }
+
+  borrar(){
+
+  }
 
   // PolarArea
   public polarAreaChartLabels: string[] = [ this.english, this.teamwork, this.adaptabilidad, this.javaScript, this.java ];
+
   public polarAreaChartData: ChartData<'polarArea'> = {
     labels: this.polarAreaChartLabels,
     datasets: [ {

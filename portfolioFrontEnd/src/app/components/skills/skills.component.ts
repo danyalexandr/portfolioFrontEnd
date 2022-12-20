@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { Skill } from 'src/app/model/skill';
 import { AuthorizationService } from 'src/app/services/authorization.service';
 import { SkillSE } from 'src/app/services/skillSE.service';
 
@@ -11,19 +12,28 @@ import { SkillSE } from 'src/app/services/skillSE.service';
 })
 export class SkillsComponent implements OnInit {
 
-  habilidad:any;
+  habilidad:Skill[] = [];
 
-  constructor(private router:Router, private auth: AuthorizationService, private skill: SkillSE) { }
+  constructor(private router:Router, private auth: AuthorizationService, private skillSer: SkillSE) { }
 
   ngOnInit(): void {
-    this.auth.obtenerDatos().subscribe(data => {this.habilidad = data;});
 
+    this.cargarProyectos();
   }
   public get isLogin():boolean{
     return this.auth.isUserLogin();
   }
 
-  public borrar(){
-    alert("seguro desea borrar?")
+  cargarProyectos():void{
+    this.skillSer.lista().subscribe(data => {this.habilidad = data});
+  }
+
+  public borrar(id:number){
+    if(id != undefined){
+      this.skillSer.delete(id).subscribe(data => {
+        this.cargarProyectos();
+      },err => alert(err + "borrado correctamente"));
+      this.router.navigate(["/"]);
+    }
   }
 }

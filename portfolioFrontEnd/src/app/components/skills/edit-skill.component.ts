@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Skill } from 'src/app/model/skill';
+import { SkillSE } from 'src/app/services/skillSE.service';
 
 @Component({
   selector: 'app-edit-skill',
@@ -8,15 +10,22 @@ import { Router } from '@angular/router';
 })
 export class EditSkillComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  skills:Skill = null;
+  c:string = this.skills.porcentaje.toString() + "%";
+  constructor(private router: Router, private skillSer:SkillSE, private activatedroute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    const id = this.activatedroute.snapshot.params['id'];
+    this.skillSer.detail(id).subscribe(data =>{ this.skills = data 
+    }, err => {alert(err + this.skills + `/updatetecno/${id}`); this.router.navigate([""])});
+  
   }
 
   public onClick(){
-    alert("editado");
-    this.router.navigate(["/"]);
-    //cambiar click por submit
-    
+    const id = this.activatedroute.snapshot.params['id'];
+    this.skillSer.update(id, this.skills).subscribe(data => {
+      alert(' Editado con exito');
+    },err => {alert('Editado con exito');})
+    this.router.navigate(['/home']);
   }
 }

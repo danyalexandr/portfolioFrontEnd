@@ -1,19 +1,27 @@
-<div class="container-fluid">
-    <div class="row">
-    
-        <div class="col-xs-12 col-md-12">
-            <h1 class="text" id="encabezado"> {{habilidad.componente.c3}} <button class="btn btn-dark" *ngIf="isLogin" routerLink="/addSkill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" class="mercado-match" width="25" height="25" focusable="true">
-                <path d="M14 9H9v5H7V9H2V7h5V2h2v5h5z"></path>
-              </svg></button><button class="btn btn-danger"  *ngIf="isLogin" (click)="borrar()"><svg viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" class="mercado-match" width="25" height="25" focusable="false">
-                <path d="M14 3.41L9.41 8 14 12.59 12.59 14 8 9.41 3.41 14 2 12.59 6.59 8 2 3.41 3.41 2 8 6.59 12.59 2z"></path>
-              </svg></button><button class="btn btn-dark" *ngIf="isLogin" routerLink="/editSkill"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" class="mercado-match" width="25" height="25" focusable="false">
-                <path d="M14.13 1.86a3 3 0 00-4.17 0l-7 7L1 15l6.19-2 6.94-7a3 3 0 000-4.16zm-8.36 9.71l-1.35-1.34L9.64 5 11 6.35z"></path>
-              </svg></button></h1>
-        </div>
-        
 
-        <div class="chart">
-            <app-polar-area-chart></app-polar-area-chart>
-        </div>
+
+<div class="container-fluid">       
+    <div class="row">
+
+      <h1 class="text" >Hard and soft skills<button class="btn btn-dark" *ngIf="isLogin" routerLink="/addSkill/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" class="mercado-match" width="25" height="25" focusable="true">
+        <path d="M14 9H9v5H7V9H2V7h5V2h2v5h5z"></path></svg></button></h1>
+                
+  <ul *ngFor="let h of habilidad">
+  <div class="col-xs-12 col-md-12" id="encabezado">
+    <h2>{{h.habilidad}}<button class="btn btn-dark" *ngIf="isLogin" routerLink="/editSkill/{{h.id}}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" class="mercado-match" width="25" height="25" focusable="false">
+      <path d="M14.13 1.86a3 3 0 00-4.17 0l-7 7L1 15l6.19-2 6.94-7a3 3 0 000-4.16zm-8.36 9.71l-1.35-1.34L9.64 5 11 6.35z"></path>
+      </svg></button><button class="btn btn-danger"  *ngIf="isLogin" (click)="borrar(h.id)"><svg viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" class="mercado-match" width="25" height="25" focusable="false">
+      <path d="M14 3.41L9.41 8 14 12.59 12.59 14 8 9.41 3.41 14 2 12.59 6.59 8 2 3.41 3.41 2 8 6.59 12.59 2z"></path>
+      </svg></button></h2>
+    <div class="progress" style="height: 40px;">
+    <div class="progress-bar" role="progressbar" aria-label="Example 20px high" style="width: 50%;" aria-valuemin="0" aria-valuemax="100">{{h.porcentaje + "%"}}</div>
     </div>
-    </div>
+  </div>      
+</ul>
+        
+              
+
+ <!--<app-polar-area-chart></app-polar-area-chart> este chart lo implemento cuando tenga mas tiempo-->
+  </div>
+    
+  </div>

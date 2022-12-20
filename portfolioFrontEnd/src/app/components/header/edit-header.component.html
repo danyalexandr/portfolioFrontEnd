@@ -1,1 +1,18 @@
-<p>edit-header works!</p>
+<div class="container" >
+    <div class="row my-5">
+        <div class="col-sm-11 col-md-6 col-lg-4 mx-auto my-auto card">
+      <form (ngSubmit)="onClick()" class="m-5">
+        <h2 class="header">
+          Editar nota
+        </h2>
+      
+        <div class="form-outline mb-3">
+          <label for="acerca" class="form-label">Acerca de:</label>
+          <input type="textarea" name="acerca"  class="form-control" id="acerca"> 
+        </div>
+        <!-- [(ngModel)]="" *ngIf="" -->
+        <button type="submit" class="btn btn-success mb-3 col-12 col-sm-12 col-md-6" (ngSubmit)="onClick()">Editar</button>
+        </form>
+      </div>  
+      </div>
+    </div>

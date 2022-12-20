@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthorizationService } from 'src/app/services/authorization.service';
 
 @Component({
   selector: 'app-edit-header',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditHeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private auth:AuthorizationService, private router:Router) { }
 
   ngOnInit(): void {
-  }
 
+
+  }
+  onClick(){
+
+  }
 }

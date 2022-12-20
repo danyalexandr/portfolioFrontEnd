@@ -1,17 +1,17 @@
 <div class="row my-5">
     <div class="col-sm-11 col-md-6 col-lg-4 mx-auto my-auto card">
-  <form class="m-5">
+  <form class="m-5"(ngSubmit)="onClick()">
     <h2 class="header">
       Editar skill
     </h2>
   
     <div class="form-outline mb-3">
-        <label for="inputH" class="form-label">Habilidad</label>
-        <input type="text" name="inputH" formControlName="habilidad" class="form-control" id="inputH" aria-describedby="">
+        <label for="habilidad" class="form-label">Habilidad</label>
+        <input type="text" name="habilidad"  class="form-control" id="habilidad" [(ngModel)]="skills.habilidad">
      
           <div class="form-outline mb-3">
-            <label for="inputN" class="form-label">Porcentaje (%)</label>
-            <input type="number" name="inputN" formControlName="porcentaje" class="form-control" id="inputN" aria-describedby="">
+            <label for="porcentaje" class="form-label">Porcentaje (%)</label>
+            <input type="number" name="porcentaje" class="form-control" id="porcentaje" [(ngModel)]="skills.porcentaje">
           </div>
       </div>
       

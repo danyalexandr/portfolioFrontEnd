@@ -22,7 +22,7 @@ export class AuthorizationService {
   public loginSimple(email:string, pwd:string): void{
     this.http.get(this.strUrlApi).subscribe((response:any) => {if(response.token !=null){
       localStorage.setItem('token', response.token);
-      if(email === this.email && pwd === this.pwd ){
+     if(email === this.email && pwd === this.pwd ){
       this.router.navigate(['/home'])
     }else{
       console.log("usuario y contraseña incorrecta");

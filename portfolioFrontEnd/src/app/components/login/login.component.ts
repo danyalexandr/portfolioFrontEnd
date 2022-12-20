@@ -11,13 +11,13 @@ import { AuthorizationService } from 'src/app/services/authorization.service';
 
 export class LoginComponent implements OnInit {
 
-  public inputEmail:string;
-  public inputPassword:string;
+  public email:string;
+  public password:string;
   form: FormGroup;
 
   constructor(private formBuilder:FormBuilder, private auth:AuthorizationService) {
-    this.inputEmail = "";
-    this.inputPassword = ""; 
+    this.email = "";
+    this.password = ""; 
     this.form = this.formBuilder.group({
 
       email:['',[Validators.required, Validators.email]],
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
   }
 
   public btnLogin():void{
-    this.auth.loginSimple(this.inputEmail, this.inputPassword);
+    this.auth.loginSimple(this.email, this.password);
   }
 
   get Email(){
