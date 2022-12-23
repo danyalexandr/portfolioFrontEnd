@@ -17,7 +17,10 @@ export class AuthorizationService {
 
   private strUrlApi:string;
       
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router) { 
+
+    this.strUrlApi = 'portfolioFrontEnd/src/assets/data/user.json';
+  }
 
   public loginSimple(email:string, pwd:string): void{
     this.http.get(this.strUrlApi).subscribe((response:any) => {if(response.token !=null){
@@ -39,9 +42,10 @@ export class AuthorizationService {
     return (localStorage.getItem('token') !=null);
     
   }
+  /*
   public obtenerDatos(): Observable<any>{
     return this.http.get('../assets/data/user.json');
-  }
+  }*/
 
   //retornar desde apirest
   public obtenerPersona(): Observable <Persona> {

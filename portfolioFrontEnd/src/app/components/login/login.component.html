@@ -7,7 +7,7 @@
 
   <div class="form-outline mb-3">
       <label for="email" class="form-label">Email</label>
-      <input type="email" name="email" [(ngModel)]="email" formControlName="email" class="form-control" id="email" aria-describedby="emailHelp">
+      <input type="email" name="email"  formControlName="email" class="form-control" id="email" aria-describedby="emailHelp">
       <div *ngIf="Email?.errors && Email?.touched">
         <p *ngIf="Email?.hasError('required')" class="text-danger">
           El mail es requerido.
@@ -19,7 +19,7 @@
     </div>
     <div class="form-outline mb-3">
       <label for="password" class="form-label">Contraseña</label>
-      <input type="password" name="password" [(ngModel)]="password" formControlName="password" class="form-control" id="password">
+      <input type="password" name="password"  formControlName="password" class="form-control" id="password">
       <div *ngIf="Password?.errors && Password?.touched">
         <p *ngIf="Password?.hasError('required')" class="text-danger">
           La contraseña es requerida.
