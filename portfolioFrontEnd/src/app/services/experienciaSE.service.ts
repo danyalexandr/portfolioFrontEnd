@@ -8,20 +8,20 @@ import { Experiencia } from '../model/experiencia';
 })
 export class ExperienciaSE {
 
-  expURL = 'http://localhost:8080/explaboral';
+  expURL = 'injured-nora-danyalexandr.koyeb.app/explaboral';
 
   constructor(private http:HttpClient) { }
 
   public lista(): Observable<Experiencia[]>{
-    return this.http.get<Experiencia[]>('http://localhost:8080/explaboral/lista');
+    return this.http.get<Experiencia[]>('injured-nora-danyalexandr.koyeb.app/explaboral/lista');
   }
 
   public detail(id:number): Observable<Experiencia>{
-    return this.http.get<Experiencia>(`http://localhost:8080/explaboral/detail/${id}`);
+    return this.http.get<Experiencia>(`injured-nora-danyalexandr.koyeb.app/explaboral/detail/${id}`);
   }
 
   public save(experiencia:Experiencia):Observable<any>{
-    return this.http.post<any>('http://localhost:8080/explaboral/create', experiencia);
+    return this.http.post<any>('injured-nora-danyalexandr.koyeb.app/explaboral/create', experiencia);
   }
 
   public update(id:number, experiencia:Experiencia):Observable<any>{
@@ -29,6 +29,6 @@ export class ExperienciaSE {
   }
 
   public delete(id:number):Observable<any>{
-    return this.http.delete<any>(`http://localhost:8080/explaboral/borrar/${id}`);
+    return this.http.delete<any>(`injured-nora-danyalexandr.koyeb.app/explaboral/borrar/${id}`);
   }
 }

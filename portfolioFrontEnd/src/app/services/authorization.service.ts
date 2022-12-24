@@ -49,7 +49,7 @@ export class AuthorizationService {
 
   //retornar desde apirest
   public obtenerPersona(): Observable <Persona> {
-    return this.http.get<Persona>('http://localhost:8080/persona/traer/perfil'); 
+    return this.http.get<Persona>('injured-nora-danyalexandr.koyeb.app/persona/traer/perfil'); 
 
   }
 

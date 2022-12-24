@@ -11,22 +11,22 @@ export class EducacionSE {
   constructor(private http: HttpClient) { }
 
   public lista(): Observable<Educacion[]>{
-    return this.http.get<Educacion[]>('http://localhost:8080/educa/listaedu');
+    return this.http.get<Educacion[]>('injured-nora-danyalexandr.koyeb.app/educa/listaedu');
   }
 
   public detail(id:number): Observable<Educacion>{
-    return this.http.get<Educacion>(`http://localhost:8080/educa/detailedu/${id}`);
+    return this.http.get<Educacion>(`injured-nora-danyalexandr.koyeb.app/detailedu/${id}`);
   }
 
   public save(educacion:Educacion):Observable<any>{
-    return this.http.post<any>('http://localhost:8080/educa/crearedu', educacion);
+    return this.http.post<any>('injured-nora-danyalexandr.koyeb.app/educa/crearedu', educacion);
   }
 
   public update(id:number, educacion:Educacion):Observable<any>{
-    return this.http.put<any>(`http://localhost:8080/educa/updateedu/${id}`, educacion);
+    return this.http.put<any>(`injured-nora-danyalexandr.koyeb.app/educa/updateedu/${id}`, educacion);
   }
 
   public delete(id:number):Observable<any>{
-    return this.http.delete<any>(`http://localhost:8080/educa/borraredu/${id}`);
+    return this.http.delete<any>(`injured-nora-danyalexandr.koyeb.app/educa/borraredu/${id}`);
   }
 }
