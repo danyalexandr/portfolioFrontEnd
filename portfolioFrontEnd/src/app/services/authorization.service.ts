@@ -12,24 +12,24 @@ import { Persona } from '../model/persona';
 })
 export class AuthorizationService {
 
-  email:string = 'test@email.com';
-  pwd:string = "123456789";
+//  email:string = 'test@email.com';
+//  pwd:string = "123456789";
 
   private strUrlApi:string;
       
   constructor(private http: HttpClient, private router: Router) { 
 
-    this.strUrlApi = 'portfolioFrontEnd/src/assets/data/user.json';
+    this.strUrlApi = 'https://injured-nora-danyalexandr.koyeb.app';
   }
 
   public loginSimple(email:string, pwd:string): void{
     this.http.get(this.strUrlApi).subscribe((response:any) => {if(response.token !=null){
       localStorage.setItem('token', response.token);
-     if(email === this.email && pwd === this.pwd ){
+     /*if(email === this.email && pwd === this.pwd ){
       this.router.navigate(['/home'])
     }else{
       console.log("usuario y contraseña incorrecta");
-    }
+    }*/
       console.log(email, pwd);
     }});
   }
@@ -49,7 +49,7 @@ export class AuthorizationService {
 
   //retornar desde apirest
   public obtenerPersona(): Observable <Persona> {
-    return this.http.get<Persona>('injured-nora-danyalexandr.koyeb.app/persona/traer/perfil'); 
+    return this.http.get<Persona>('https://injured-nora-danyalexandr.koyeb.app/persona/traer/perfil'); 
 
   }
 

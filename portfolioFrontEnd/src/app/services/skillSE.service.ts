@@ -11,22 +11,22 @@ export class SkillSE {
   constructor(private http: HttpClient) { }
 
   public lista(): Observable<Skill[]>{
-    return this.http.get<Skill[]>('http://localhost:8080/tecno/listatecno');
+    return this.http.get<Skill[]>('https://injured-nora-danyalexandr.koyeb.app/tecno/listatecno');
   }
 
   public detail(id:number): Observable<Skill>{
-    return this.http.get<Skill>(`http://localhost:8080/tecno/detailtecno/${id}`);
+    return this.http.get<Skill>(`https://injured-nora-danyalexandr.koyeb.app/tecno/detailtecno/${id}`);
   }
 
   public save(skill:Skill):Observable<any>{
-    return this.http.post<any>('http://localhost:8080/tecno/creartecno', skill);
+    return this.http.post<any>('https://injured-nora-danyalexandr.koyeb.app/tecno/creartecno', skill);
   }
 
   public update(id:number, skill:Skill):Observable<any>{
-    return this.http.put<any>(`http://localhost:8080/tecno/updatetecno/${id}`, skill);
+    return this.http.put<any>(`https://injured-nora-danyalexandr.koyeb.app/tecno/updatetecno/${id}`, skill);
   }
 
   public delete(id:number):Observable<any>{
-    return this.http.delete<any>(`http://localhost:8080/tecno/borrartecno/${id}`);
+    return this.http.delete<any>(`https://injured-nora-danyalexandr.koyeb.app/tecno/borrartecno/${id}`);
   }
 }
