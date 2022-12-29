@@ -19,7 +19,7 @@ export class AuthorizationService {
       
   constructor(private http: HttpClient, private router: Router) { 
 
-    this.strUrlApi = 'https://injured-nora-danyalexandr.koyeb.app';
+    this.strUrlApi = 'https://portfolio-backend-danyalexandr.koyeb.app/';
   }
 
   public loginSimple(email:string, pwd:string): void{
@@ -49,7 +49,7 @@ export class AuthorizationService {
 
   //retornar desde apirest
   public obtenerPersona(): Observable <Persona> {
-    return this.http.get<Persona>('https://injured-nora-danyalexandr.koyeb.app/persona/traer/perfil'); 
+    return this.http.get<Persona>('https://portfolio-backend-danyalexandr.koyeb.app/persona/traer/perfil'); 
 
   }
 
