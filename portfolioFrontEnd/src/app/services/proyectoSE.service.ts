@@ -11,19 +11,19 @@ export class ProyectoSE {
   constructor(private http: HttpClient) { }
 
   public lista(): Observable<Proyectos[]>{
-    return this.http.get<Proyectos[]>('https://injured-nora-danyalexandr.koyeb.app/proyecto/listapro');
+    return this.http.get<Proyectos[]>('https://portfolio-backend-danyalexandr.koyeb.app/proyecto/lista');
   }
 
   public detail(id:number): Observable<Proyectos>{
-    return this.http.get<Proyectos>(`https://injured-nora-danyalexandr.koyeb.app/detailpro/${id}`);
+    return this.http.get<Proyectos>(`https://portfolio-backend-danyalexandr.koyeb.app/proyecto/detail/${id}`);
   }
 
   public save(proyectos:Proyectos):Observable<any>{
-    return this.http.post<any>('https://injured-nora-danyalexandr.koyeb.app/proyecto/crearpro', proyectos);
+    return this.http.post<any>('https://portfolio-backend-danyalexandr.koyeb.app/proyecto/crear', proyectos);
   }
 
   public update(id:number, proyectos:Proyectos):Observable<any>{
-    return this.http.put<any>(`https://injured-nora-danyalexandr.koyeb.app/proyecto/updatepro/${id}`, proyectos);
+    return this.http.put<any>(`https://portfolio-backend-danyalexandr.koyeb.app/proyecto/update/${id}`, proyectos);
   }
 
   public delete(id:number):Observable<any>{

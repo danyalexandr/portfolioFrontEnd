@@ -8,20 +8,20 @@ import { Experiencia } from '../model/experiencia';
 })
 export class ExperienciaSE {
 
-  expURL = 'https://injured-nora-danyalexandr.koyeb.app';
+  expURL = 'https://portfolio-backend-danyalexandr.koyeb.app';
 
   constructor(private http:HttpClient) { }
 
   public lista(): Observable<Experiencia[]>{
-    return this.http.get<Experiencia[]>('https://injured-nora-danyalexandr.koyeb.app/explaboral/lista');
+    return this.http.get<Experiencia[]>('https://portfolio-backend-danyalexandr.koyeb.app/exp/lista');
   }
 
   public detail(id:number): Observable<Experiencia>{
-    return this.http.get<Experiencia>(`https://injured-nora-danyalexandr.koyeb.app/explaboral/detail/${id}`);
+    return this.http.get<Experiencia>(`https://portfolio-backend-danyalexandr.koyeb.app/exp/detail/${id}`);
   }
 
   public save(experiencia:Experiencia):Observable<any>{
-    return this.http.post<any>('https://injured-nora-danyalexandr.koyeb.app/explaboral/create', experiencia);
+    return this.http.post<any>('https://portfolio-backend-danyalexandr.koyeb.app/exp/crear', experiencia);
   }
 
   public update(id:number, experiencia:Experiencia):Observable<any>{
@@ -29,6 +29,6 @@ export class ExperienciaSE {
   }
 
   public delete(id:number):Observable<any>{
-    return this.http.delete<any>(`https://injured-nora-danyalexandr.koyeb.app/explaboral/borrar/${id}`);
+    return this.http.delete<any>(`https://portfolio-backend-danyalexandr.koyeb.app/exp/borrar/${id}`);
   }
 }
