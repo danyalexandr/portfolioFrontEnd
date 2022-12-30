@@ -27,6 +27,6 @@ export class ProyectoSE {
   }
 
   public delete(id:number):Observable<any>{
-    return this.http.delete<any>(`https://injured-nora-danyalexandr.koyeb.app/proyecto/borrarpro/${id}`);
+    return this.http.delete<any>(`https://injured-nora-danyalexandr.koyeb.app/proyecto/borrar/${id}`);
   }
 }

@@ -5,12 +5,12 @@ export class Proyectos {
   descripcion: String;
 
   constructor(
-    institucion: string,
-    carrera: string,
+    nombre: string,
+    descripcion: string,
   ) 
   {
-    this.nombre = institucion;
-    this.descripcion = carrera;
+    this.nombre = nombre;
+    this.descripcion = descripcion;
         
   }
 }

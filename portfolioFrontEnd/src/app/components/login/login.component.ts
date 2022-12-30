@@ -11,22 +11,18 @@ import { AuthorizationService } from 'src/app/services/authorization.service';
 
 export class LoginComponent implements OnInit {
 
-  public email:string;
+  public username:string;
   public password:string;
   form: FormGroup;
 
   constructor(private formBuilder:FormBuilder, private auth:AuthorizationService) {
-    this.email = "";
+    this.username = "";
     this.password = ""; 
     this.form = this.formBuilder.group({
 
-      email:['',[Validators.required, Validators.email]],
-      password:['',[Validators.required, Validators.minLength(9)]],
-      deviceInfo:this.formBuilder.group({
-        deviceId:[""],
-        deviceType:[""],
-        notificationToken:[""]
-      })
+      username:['',[Validators.required, Validators.email]],
+      password:['',[Validators.required, Validators.minLength(9)]]
+      
     })
   }
   
@@ -35,7 +31,7 @@ export class LoginComponent implements OnInit {
   }
 
   public btnLogin():void{
-    this.auth.loginSimple(this.email, this.password);
+    this.auth.loginTest(this.username, this.password);
     console.log("click");
   }
 

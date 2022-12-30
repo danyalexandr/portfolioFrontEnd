@@ -11,45 +11,50 @@ import { Persona } from '../model/persona';
   providedIn: 'root'
 })
 export class AuthorizationService {
-
-//  email:string = 'test@email.com';
-//  pwd:string = "123456789";
+log:boolean;
 
   private strUrlApi:string;
       
   constructor(private http: HttpClient, private router: Router) { 
 
-    this.strUrlApi = 'https://portfolio-backend-danyalexandr.koyeb.app/';
+    this.strUrlApi = 'https://portfolio-backend-danyalexandr.koyeb.app';
   }
 
-  public loginSimple(email:string, pwd:string): void{
-    this.http.get(this.strUrlApi).subscribe((response:any) => {if(response.token !=null){
+  /*public loginSimple(email:string, pwd:string): void{
+    this.http.get(this.strUrlApi).subscribe((response:any) => {{
       localStorage.setItem('token', response.token);
-     /*if(email === this.email && pwd === this.pwd ){
+     if(email === this.email && pwd === this.pwd ){
       this.router.navigate(['/home'])
     }else{
       console.log("usuario y contraseña incorrecta");
-    }*/
+    }
       console.log(email, pwd);
     }});
+  }*/
+
+  public loginTest(username:string, password:string):void{
+    this.http.get(this.strUrlApi).subscribe((response:any) =>{
+      localStorage.setItem('username', response);
+      localStorage.setItem('password', response);
+    })
+  }
+  
+  public obtenerDatos(): Observable<any>{
+    return this.http.get<Persona>('https://portfolio-backend-danyalexandr.koyeb.app');
   }
 
   public logout():void{
-    localStorage.removeItem('token');
+    this.log = false;
     this.router.navigate(['/']);
   }
-  public isUserLogin(){
-    return (localStorage.getItem('token') !=null);
-    
-  }
-  /*
-  public obtenerDatos(): Observable<any>{
-    return this.http.get('../assets/data/user.json');
-  }*/
 
+  public isUserLogin(){
+  return this.log = true;
+  }
+  
   //retornar desde apirest
   public obtenerPersona(): Observable <Persona> {
-    return this.http.get<Persona>('https://portfolio-backend-danyalexandr.koyeb.app/persona/traer/perfil'); 
+    return this.http.get<Persona>('https://portfolio-backend-danyalexandr.koyeb.app'); 
 
   }
 

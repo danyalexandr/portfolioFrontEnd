@@ -16,7 +16,7 @@ export class EditEduComponent implements OnInit {
   ngOnInit(): void {
     const id = this.aRouter.snapshot.params['id'];
     this.eduSer.detail(id).subscribe(data =>{ this.eduCarr = data 
-    }, err => {alert(err + this.eduCarr + `/updateedu/${id}`); this.router.navigate([""])});
+    }, err => {alert(err + this.eduCarr + `/update/${id}`); this.router.navigate([""])});
   }
 
   //revisar porque no funciona el metodo para editar (en postman anda bien)

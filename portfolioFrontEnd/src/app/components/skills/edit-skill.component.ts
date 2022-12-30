@@ -17,7 +17,7 @@ export class EditSkillComponent implements OnInit {
   ngOnInit(): void {
     const id = this.activatedroute.snapshot.params['id'];
     this.skillSer.detail(id).subscribe(data =>{ this.skills = data 
-    }, err => {alert(err + this.skills + `/updatetecno/${id}`); this.router.navigate([""])});
+    }, err => {alert(err + this.skills + `/update/${id}`); this.router.navigate([""])});
   
   }
 

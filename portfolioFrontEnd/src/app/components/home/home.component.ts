@@ -7,8 +7,6 @@ import { AuthorizationService } from 'src/app/services/authorization.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  displayHome:boolean = false;
- 
 
   constructor(private auth:AuthorizationService) { }
 
