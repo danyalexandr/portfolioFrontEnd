@@ -1,8 +1,8 @@
 export class Usuario {
 
     id?: number;
-  username: String;
-  password: String;
+  username: string;
+  password: string;
 
   constructor(
     username: string,

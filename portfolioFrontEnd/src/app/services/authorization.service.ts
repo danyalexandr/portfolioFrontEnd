@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Token } from '@angular/compiler';
 import { Persona } from '../model/persona';
+import { Usuario } from '../model/usuario';
 
 
 @Injectable({
@@ -39,8 +40,8 @@ log:boolean;
     })
   }
   
-  public obtenerDatos(): Observable<any>{
-    return this.http.get<Persona>('https://portfolio-backend-danyalexandr.koyeb.app');
+  public obtenerDatos(): Observable<Usuario[]>{
+    return this.http.get<Usuario[]>('https://portfolio-backend-danyalexandr.koyeb.app/user/traer');
   }
 
   public logout():void{
@@ -54,7 +55,7 @@ log:boolean;
   
   //retornar desde apirest
   public obtenerPersona(): Observable <Persona> {
-    return this.http.get<Persona>('https://portfolio-backend-danyalexandr.koyeb.app'); 
+    return this.http.get<Persona>('https://localhost:8080/persona/lista'); 
 
   }
 

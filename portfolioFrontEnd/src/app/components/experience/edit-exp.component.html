@@ -8,12 +8,12 @@
   
     <div class="form-outline mb-3">
       <label for="nombreE" class="form-label">Empresa:</label>
-      <input type="text" name="nombreE"  class="form-control" id="nombreE" [(ngModel)]="expLab.nombreE">
+      <input type="text" name="nombreE"  class="form-control" id="nombreE" [(ngModel)]="expLab.empresa">
     </div>
     
     <div class="form-outline mb-3">
         <label for="descripcionE" class="form-label">Puesto:</label>
-        <input type="text" name="descripcionE"  class="form-control" id="descripcionE" [(ngModel)]="expLab.descripcionE">
+        <input type="text" name="descripcionE"  class="form-control" id="descripcionE" [(ngModel)]="expLab.puesto">
       </div>
      
     <button type="submit" class="btn btn-success mb-3 col-12 col-sm-12 col-md-6" (ngSubmit)="onClick()">Editar</button>

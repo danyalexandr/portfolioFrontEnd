@@ -19,8 +19,8 @@ export class HeaderComponent implements OnInit {
   constructor(private router: Router, private auth: AuthorizationService) {}
 
   ngOnInit(): void {
-    this.auth.obtenerDatos().subscribe(data => {this.user = data});
-    console.log(this.user.username);
+    //this.auth.obtenerDatos().subscribe(data => {this.user = data});
+    //console.log(this.user.username);
    
     //prueba api
       this.auth.obtenerPersona().subscribe((data) =>{

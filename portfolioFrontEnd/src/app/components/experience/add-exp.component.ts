@@ -10,8 +10,11 @@ import { ExperienciaSE } from 'src/app/services/experienciaSE.service';
 })
 export class AddExpComponent implements OnInit {
 
-  nombreE:string = '';
-  descripcionE:string = '';
+  puesto:string = '';
+  empresa:string = '';
+  fechaInicio:string = '';
+  fechaFin:string = '';
+  lugar:string = '';
 
   constructor(private expSer:ExperienciaSE, private router: Router) { }
 
@@ -19,7 +22,7 @@ export class AddExpComponent implements OnInit {
   }
 
   onClick():void{
-  const exp = new Experiencia(this.nombreE, this.descripcionE);
+  const exp = new Experiencia(this.puesto, this.empresa, this.fechaInicio, this.fechaFin, this.lugar);
   this.expSer.save(exp).subscribe(data => {alert("experiencia añadida OK");
    });
    this.router.navigate(["/"]);
