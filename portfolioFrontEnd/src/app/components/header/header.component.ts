@@ -13,8 +13,8 @@ import { AuthorizationService } from 'src/app/services/authorization.service';
 export class HeaderComponent implements OnInit {
   //miPortfolio: any;
   log:boolean;
-  user:Usuario = new Usuario("","");
-  persona:Persona = new Persona("","","","","");
+  user:Usuario[] = [];
+  persona:Persona[] = [];
 
   constructor(private router: Router, private auth: AuthorizationService) {}
 
@@ -23,12 +23,8 @@ export class HeaderComponent implements OnInit {
     //console.log(this.user.username);
    
     //prueba api
-      this.auth.obtenerPersona().subscribe((data) =>{
-        this.persona = data; 
-        console.log(this.persona);     
-      });
+      this.auth.obtenerPersona().subscribe(data => {this.persona = data});
       }
-
   
   public get isLogin(): any {
     

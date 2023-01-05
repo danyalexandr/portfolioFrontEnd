@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Router } from '@angular/router';
+import { Router, UrlSerializer } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Token } from '@angular/compiler';
 import { Persona } from '../model/persona';
@@ -12,7 +12,8 @@ import { Usuario } from '../model/usuario';
   providedIn: 'root'
 })
 export class AuthorizationService {
-log:boolean;
+
+user:boolean = false;
 
   private strUrlApi:string;
       
@@ -33,29 +34,23 @@ log:boolean;
     }});
   }*/
 
-  public loginTest(username:string, password:string):void{
-    this.http.get(this.strUrlApi).subscribe((response:any) =>{
-      localStorage.setItem('username', response);
-      localStorage.setItem('password', response);
-    })
-  }
+  
   
   public obtenerDatos(): Observable<Usuario[]>{
     return this.http.get<Usuario[]>('https://portfolio-backend-danyalexandr.koyeb.app/user/traer');
   }
 
   public logout():void{
-    this.log = false;
-    this.router.navigate(['/']);
+        this.router.navigate(['/']);
   }
 
-  public isUserLogin(){
-  return this.log = true;
+  public isUserLogin():boolean{
+    return this.user = true;  
   }
   
   //retornar desde apirest
-  public obtenerPersona(): Observable <Persona> {
-    return this.http.get<Persona>('https://localhost:8080/persona/lista'); 
+  public obtenerPersona(): Observable <Persona[]> {
+    return this.http.get<Persona[]>('https://portfolio-backend-danyalexandr.koyeb.app/persona/lista'); 
 
   }
 

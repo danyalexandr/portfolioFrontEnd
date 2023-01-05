@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { Experiencia } from 'src/app/model/experiencia';
+import { Usuario } from 'src/app/model/usuario';
 import { AuthorizationService } from 'src/app/services/authorization.service';
 import { ExperienciaSE } from 'src/app/services/experienciaSE.service';
 
@@ -11,14 +12,14 @@ import { ExperienciaSE } from 'src/app/services/experienciaSE.service';
 })
 export class ExperienceComponent implements OnInit {
   experiencia:Experiencia[] = [];
- // miPortfolio:any;
+  usuario:Usuario[] = [];
 
   constructor(private router:Router, private auth: AuthorizationService, 
               private expSer:ExperienciaSE) { }
 
   ngOnInit(): void {
    this.cargarExperiencia(); 
-    //this.auth.obtenerDatos().subscribe(data => {this.miPortfolio = data});
+  this.auth.obtenerDatos().subscribe(data => {this.usuario = data});
   }
 
   public get isLogin():boolean{
@@ -35,6 +36,6 @@ borrar(id:number): void{
         this.cargarExperiencia();
       },err => alert(err + "no se pudo borrar"));
     }
-    
+    this.router.navigate(["/"])
   }
 }

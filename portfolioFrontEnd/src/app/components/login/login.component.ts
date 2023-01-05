@@ -32,8 +32,7 @@ export class LoginComponent implements OnInit {
   }
 
   public btnLogin():void{
-    this.auth.loginTest(this.username, this.password);
-    console.log("click");
+      
   }
 
   get Email(){

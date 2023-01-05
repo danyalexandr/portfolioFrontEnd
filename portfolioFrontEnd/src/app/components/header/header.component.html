@@ -35,36 +35,43 @@
       <img src="assets/notBanner.png" id="banner" alt="banner" />
     </div>
     
+    <ul *ngFor="let i of persona">
    <div class="col-xs-4 col-md-4">
     <div>
       <img src="/assets/foto.png" id="perfil" alt="" class="img-fluid"/>
       <button class="btn btn-dark" *ngIf="isLogin">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" class="mercado-match" width="16" height="16" focusable="false">
-       <path d="M14.13 1.86a3 3 0 00-4.17 0l-7 7L1 15l6.19-2 6.94-7a3 3 0 000-4.16zm-8.36 9.71l-1.35-1.34L9.64 5 11 6.35z"></path>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" 
+                    fill="currentColor" class="mercado-match" width="16" height="16" focusable="false">
+       <path d="M14.13 1.86a3 3 0 00-4.17 0l-7 7L1 15l6.19-2 6.94-7a3 3 0 000-4.16zm-8.36 
+                9.71l-1.35-1.34L9.64 5 11 6.35z">
+       </path>
         </svg>
       </button>
       </div>
         <p 
-        class="nombre"> <strong>{{persona.nombre}} {{persona.apellido}}</strong>
+        class="nombre"> <strong>{{i.nombre}} {{i.apellido}}</strong>
       </p>
         <p 
-        class="p1">{{persona.puesto}}
+        class="p1">{{i.puesto}}
       </p>
       </div>
       
-     
       <div class="col-xs-8 col-md-8">
-     <div>
-        <h1 class="text">Acerca de mi
-         <button class="btn btn-dark" *ngIf="isLogin" routerLink="/editHeader">
-           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" class="mercado-match" width="16" height="16" focusable="false">
-            <path d="M14.13 1.86a3 3 0 00-4.17 0l-7 7L1 15l6.19-2 6.94-7a3 3 0 000-4.16zm-8.36 9.71l-1.35-1.34L9.64 5 11 6.35z"></path>
-           </svg>
-         </button>
-        </h1>
-        <p 
-        class="p2"> {{persona.acercaDe}}
-        </p>
-      </div>
-    </div>
-    </div>
+        <div>
+          <h1 class="text">Acerca de mi
+            <button class="btn btn-dark" *ngIf="isLogin" routerLink="/editHeader">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" 
+              fill="currentColor" class="mercado-match" width="16" height="16" focusable="false">
+            <path d="M14.13 1.86a3 3 0 00-4.17 0l-7 7L1 15l6.19-2 6.94-7a3 3 0 000-4.16zm-8.36 
+            9.71l-1.35-1.34L9.64 5 11 6.35z">
+          </path>
+        </svg>
+      </button>
+    </h1>
+    <p 
+    class="p2"> {{i.acercaDe}}
+  </p>
+</div>
+</div>
+</ul>
+</div>

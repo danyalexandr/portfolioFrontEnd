@@ -37,6 +37,6 @@ export class EducationComponent implements OnInit {
         this.cargarEducacion();
       },err => alert(err + "borrado correctamente"));
     }
-    
+    this.router.navigate(["/"])
   }
 }
