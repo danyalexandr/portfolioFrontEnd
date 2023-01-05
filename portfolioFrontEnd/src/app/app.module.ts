@@ -23,6 +23,8 @@ import { EditEduComponent } from './components/education/edit-edu.component';
 import { EditProComponent } from './components/proyects/edit-pro.component';
 import { EditSkillComponent } from './components/skills/edit-skill.component';
 import { EditHeaderComponent } from './components/header/edit-header.component';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import { MatProgressBarModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,8 @@ import { EditHeaderComponent } from './components/header/edit-header.component';
     NgChartsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
