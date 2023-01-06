@@ -17,7 +17,6 @@ export class EditHeaderComponent implements OnInit {
   ngOnInit(): void {
     const id = this.activatedroute.snapshot.params['id'];
     this.auth.detail(id).subscribe(data =>{ this.acercaHeader = data 
-    console.log(this.acercaHeader);
     }, err => {alert(err + this.acercaHeader.nombre + `/update/${id}`); this.router.navigate([""])});
   }
   onClick(){

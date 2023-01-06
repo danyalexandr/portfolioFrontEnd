@@ -22,8 +22,10 @@
       </svg>
     </button>
   </h2>
-    <mat-progress-bar mode="determinate"></mat-progress-bar>
-    </div>   
+  <div class="mat-progress-bar">
+  <mat-progress-bar mode="determinate" (value)="h.porcentaje"></mat-progress-bar>
+ </div>
+  </div>   
 </ul>
 </div>
  <!--<app-polar-area-chart></app-polar-area-chart> este chart lo implemento cuando tenga mas tiempo-->

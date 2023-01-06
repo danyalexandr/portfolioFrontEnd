@@ -12,7 +12,12 @@ import { SkillSE } from 'src/app/services/skillSE.service';
 })
 export class SkillsComponent implements OnInit {
 
+  
+  progress:number;
+
   habilidad:Skill[] = [];
+
+  
 
   constructor(private router:Router, private auth: AuthorizationService, private skillSer: SkillSE) { }
 
@@ -22,8 +27,13 @@ export class SkillsComponent implements OnInit {
   }
   
   cargarProyectos():void{
-    this.skillSer.lista().subscribe(data => {this.habilidad = data});
-  }
+    this.skillSer.lista().subscribe(data => {this.habilidad = data}
+      
+      );
+      for (let i of this.habilidad) {
+      this.progress = i.porcentaje;  
+      }  
+    }
 
   public borrar(id:number){
     if(id != undefined){
