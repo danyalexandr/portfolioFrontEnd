@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Persona } from 'src/app/model/persona';
 import { AuthorizationService } from 'src/app/services/authorization.service';
 
 @Component({
@@ -9,13 +10,21 @@ import { AuthorizationService } from 'src/app/services/authorization.service';
 })
 export class EditHeaderComponent implements OnInit {
 
-  constructor(private auth:AuthorizationService, private router:Router) { }
+  acercaHeader:Persona = null;
+
+  constructor(private auth:AuthorizationService, private router:Router, private activatedroute: ActivatedRoute) { }
 
   ngOnInit(): void {
-
-
+    const id = this.activatedroute.snapshot.params['id'];
+    this.auth.detail(id).subscribe(data =>{ this.acercaHeader = data 
+    console.log(this.acercaHeader);
+    }, err => {alert(err + this.acercaHeader.nombre + `/update/${id}`); this.router.navigate([""])});
   }
   onClick(){
-
+    const id = this.activatedroute.snapshot.params['id'];
+    this.auth.update(id, this.acercaHeader).subscribe(data => {
+      alert(' Editado con exito');
+    },err => {alert('Editado con exito');})
+    this.router.navigate(['/home']);
   }
 }

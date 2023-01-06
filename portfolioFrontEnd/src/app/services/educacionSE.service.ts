@@ -15,7 +15,7 @@ export class EducacionSE {
   }
 
   public detail(id:number): Observable<Educacion>{
-    return this.http.get<Educacion>(`https://portfolio-backend-danyalexandr.koyeb.app/detail/${id}`);
+    return this.http.get<Educacion>(`https://portfolio-backend-danyalexandr.koyeb.app/educacion/detail/${id}`);
   }
 
   public save(educacion:Educacion):Observable<any>{

@@ -25,6 +25,7 @@ import { EditSkillComponent } from './components/skills/edit-skill.component';
 import { EditHeaderComponent } from './components/header/edit-header.component';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { MatProgressBarModule } from '@angular/material';
+import { MatFormFieldModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { MatProgressBarModule } from '@angular/material';
     ReactiveFormsModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

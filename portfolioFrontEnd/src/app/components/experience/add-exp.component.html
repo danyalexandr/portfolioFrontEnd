@@ -14,6 +14,21 @@
         <label for="puesto" class="form-label">Puesto:</label>
         <input type="text" name="puesto"  class="form-control" id="puesto" [(ngModel)]="puesto">
       </div>
+
+      <div class="form-outline mb-3">
+        <label for="fechaInicio" class="form-label">Fecha inicio:</label>
+        <input type="text" name="fechaInicio"  class="form-control" id="fechaInicio" [(ngModel)]="fechaInicio">
+      </div>
+
+      <div class="form-outline mb-3">
+        <label for="fechaFin" class="form-label">Fecha fin:</label>
+        <input type="text" name="fechaFin"  class="form-control" id="fechaFin" [(ngModel)]="fechaFin">
+      </div>
+
+      <div class="form-outline mb-3">
+        <label for="lugar" class="form-label">Lugar:</label>
+        <input type="text" name="lugar"  class="form-control" id="lugar" [(ngModel)]="lugar">
+      </div>
      
     <button type="submit" class="btn btn-success mb-3 col-12 col-sm-12 col-md-6" (ngSubmit)="onClick()">
       Agregar

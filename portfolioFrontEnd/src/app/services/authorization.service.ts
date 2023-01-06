@@ -29,7 +29,14 @@ private local:string = '../../assets/data/user.json';
   //retornar desde apirest
   public obtenerPersona(): Observable <Persona[]> {
     return this.http.get<Persona[]>('https://portfolio-backend-danyalexandr.koyeb.app/persona/lista'); 
+  }
 
+  public detail(id:number): Observable<Persona>{
+    return this.http.get<Persona>(`https://portfolio-backend-danyalexandr.koyeb.app/persona/detail/${id}`);
+  }
+
+  public update(id:number, persona:Persona):Observable<any>{
+    return this.http.put<any>(`https://portfolio-backend-danyalexandr.koyeb.app/persona/update/${id}`, persona);
   }
 
   public loginSimple(email:string, password:string):void{
