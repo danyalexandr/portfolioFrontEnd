@@ -1,12 +1,12 @@
 export class Skill {
 
     id?: number;
-  habilidad: String;
-  porcentaje: number;
+  habilidad: string;
+  porcentaje: string;
 
   constructor(
     habilidad: string,
-    porcentaje: number,
+    porcentaje: string,
   ) 
   {
     this.habilidad = habilidad;
