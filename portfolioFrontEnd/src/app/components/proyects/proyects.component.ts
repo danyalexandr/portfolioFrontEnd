@@ -20,11 +20,7 @@ export class ProyectsComponent implements OnInit {
     
   }
 
-  public get isLogin():boolean{
-    return this.auth.isUserLogin();
-  }
-
-  cargarProyectos():void{
+   cargarProyectos():void{
     this.proSer.lista().subscribe(data => {this.pro = data});
   }
 
@@ -36,4 +32,8 @@ export class ProyectsComponent implements OnInit {
       this.router.navigate(["/"]);
     }
   }
+
+  public get isLogin():boolean {
+    return this.auth.isUserLogin();
+    }
 }

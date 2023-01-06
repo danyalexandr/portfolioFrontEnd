@@ -20,10 +20,7 @@ export class SkillsComponent implements OnInit {
 
     this.cargarProyectos();
   }
-  public get isLogin():boolean{
-    return this.auth.isUserLogin();
-  }
-
+  
   cargarProyectos():void{
     this.skillSer.lista().subscribe(data => {this.habilidad = data});
   }
@@ -36,4 +33,8 @@ export class SkillsComponent implements OnInit {
       this.router.navigate(["/"]);
     }
   }
+
+  public get isLogin():boolean {
+    return this.auth.isUserLogin();
+    }
 }

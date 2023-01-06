@@ -13,39 +13,17 @@ import { Usuario } from '../model/usuario';
 })
 export class AuthorizationService {
 
-user:boolean = false;
+private local:string = '../../assets/data/user.json';
 
   private strUrlApi:string;
       
   constructor(private http: HttpClient, private router: Router) { 
 
     this.strUrlApi = 'https://portfolio-backend-danyalexandr.koyeb.app';
-  }
-
-  /*public loginSimple(email:string, pwd:string): void{
-    this.http.get(this.strUrlApi).subscribe((response:any) => {{
-      localStorage.setItem('token', response.token);
-     if(email === this.email && pwd === this.pwd ){
-      this.router.navigate(['/home'])
-    }else{
-      console.log("usuario y contraseña incorrecta");
-    }
-      console.log(email, pwd);
-    }});
-  }*/
-
-  
+  } 
   
   public obtenerDatos(): Observable<Usuario[]>{
     return this.http.get<Usuario[]>('https://portfolio-backend-danyalexandr.koyeb.app/user/traer');
-  }
-
-  public logout():void{
-        this.router.navigate(['/']);
-  }
-
-  public isUserLogin():boolean{
-    return this.user = true;  
   }
   
   //retornar desde apirest
@@ -54,6 +32,25 @@ user:boolean = false;
 
   }
 
+  public loginSimple(email:string, password:string):void{
+    this.http.get(this.local).subscribe(
+      (response:any) => {
+        if(response.token != null){
+          localStorage.setItem('token', response.token);
+          this.router.navigate(['/home']);
+        }
+      }
+    );
+  }
+
+  public logout():void{
+    localStorage.removeItem('token');
+    this.router.navigate(['/']);
+  }
+
+  public isUserLogin():boolean{
+    return (localStorage.getItem('token') != null);
+  }
    
 }
  

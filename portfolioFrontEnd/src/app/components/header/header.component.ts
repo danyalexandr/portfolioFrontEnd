@@ -26,13 +26,11 @@ export class HeaderComponent implements OnInit {
       this.auth.obtenerPersona().subscribe(data => {this.persona = data});
       }
   
-  public get isLogin(): any {
-    
+  public get isLogin():boolean {
   return this.auth.isUserLogin();
   }
 
   public btnLogout(): void {
     this.auth.logout();
-    this.router.navigate(["/home"]);
   }
 }

@@ -11,19 +11,14 @@ import { AuthorizationService } from 'src/app/services/authorization.service';
 
 export class LoginComponent implements OnInit {
 
-  public username:string;
-  public password:string;
-  form: FormGroup;
-
+  public email:string;
+  public passwordLocal:string;
+  
   constructor(private formBuilder:FormBuilder, private auth:AuthorizationService) {
-    this.username = "";
-    this.password = ""; 
-    this.form = this.formBuilder.group({
-
-      username:['',[Validators.required, Validators.email]],
-      password:['',[Validators.required, Validators.minLength(9)]]
+    this.email = "";
+    this.passwordLocal = ""; 
       
-    })
+  
   }
   
 
@@ -32,13 +27,7 @@ export class LoginComponent implements OnInit {
   }
 
   public btnLogin():void{
-      
+      this.auth.loginSimple(this.email, this.passwordLocal);
   }
 
-  get Email(){
-    return this.form.get('email');
-  }
-  get Password(){
-    return this.form.get("password"); 
-  }
-}
+ }

@@ -11,7 +11,6 @@ import { SkillSE } from 'src/app/services/skillSE.service';
 export class EditSkillComponent implements OnInit {
 
   skills:Skill = null;
-  c:string = this.skills.porcentaje.toString() + "%";
   constructor(private router: Router, private skillSer:SkillSE, private activatedroute: ActivatedRoute) { }
 
   ngOnInit(): void {

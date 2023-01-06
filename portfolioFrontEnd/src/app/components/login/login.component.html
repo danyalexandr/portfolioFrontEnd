@@ -1,37 +1,21 @@
 <div class="row my-5">
   <div class="col-sm-11 col-md-6 col-lg-4 mx-auto my-auto card">
-     <form [formGroup]="form" class="m-5">
+     <form>
        <h1 class="header">
           Sign In, please.
        </h1>
 
   <div class="form-outline mb-3">
-      <label 
-      for="email" class="form-label">Email
-    </label>
-      <input type="email" name="email"  formControlName="email" class="form-control" id="email" aria-describedby="emailHelp">
-      <div *ngIf="Email?.errors && Email?.touched">
-        <p *ngIf="Email?.hasError('required')" class="text-danger">
-          El mail es requerido.
-        </p>
-        <p *ngIf="Email?.hasError('email')" class="text-danger">
-          El formato del email debe ser valido.
-        </p>
-      </div>
+      <label for="email" class="form-label">Email</label>
+    <input type="email" name="email" class="form-control" id="email" [(ngModel)]="email">
+      
     </div>
     <div class="form-outline mb-3">
       <label for="password" class="form-label">Contraseña</label>
-      <input type="password" name="password"  formControlName="password" class="form-control" id="password">
-      <div *ngIf="Password?.errors && Password?.touched">
-        <p *ngIf="Password?.hasError('required')" class="text-danger">
-          La contraseña es requerida.
-        </p>
-        <p *ngIf="Password?.errors?.['minlength']" class="text-danger">
-          La contraseña debe ser de 8 o mas caracteres.
-        </p>
-      </div>
+      <input type="password" name="password"  class="form-control" id="password" [(ngModel)]="passwordLocal">
+      
     </div>
-    <button type="submit" class="btn btn-primary mb-3 col-12 col-sm-12 col-md-6" (click)="btnLogin()">
+    <button type="button" class="btn btn-primary mb-3 col-12 col-sm-12 col-md-6" (click)="btnLogin()">
       Iniciar sesion
     </button>
   </form>
