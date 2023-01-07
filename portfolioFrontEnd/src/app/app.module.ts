@@ -10,8 +10,6 @@ import { ExperienceComponent } from './components/experience/experience.componen
 import { LoginComponent } from './components/login/login.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
-import { NgChartsModule } from 'ng2-charts';
-import { PolarAreaChartComponent } from './components/polar-area-chart/polar-area-chart.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddExpComponent } from './components/experience/add-exp.component';
@@ -38,7 +36,6 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     LoginComponent,
     HeaderComponent,
     HomeComponent,
-    PolarAreaChartComponent,
     AddExpComponent,
     AddEduComponent,
     AddProComponent,
@@ -52,7 +49,6 @@ import {MatFormFieldModule} from '@angular/material/form-field';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgChartsModule,
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
