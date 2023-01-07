@@ -24,7 +24,8 @@ import { EditProComponent } from './components/proyects/edit-pro.component';
 import { EditSkillComponent } from './components/skills/edit-skill.component';
 import { EditHeaderComponent } from './components/header/edit-header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatProgressBarModule } from '@angular/material/progress-bar'
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar'
     ReactiveFormsModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatFormFieldModule
     
   ],
   providers: [],
