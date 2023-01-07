@@ -1,7 +1,6 @@
     <div class="row">
       <div class="col-xs-12 col-md-12" id="encabezado">
-        <h1 class="text">
-          Proyectos 
+        <h1 class="text">Proyectos 
           <button class="btn btn-dark" *ngIf="isLogin" routerLink="/addPro">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" class="mercado-match" width="25" height="25" focusable="true">
             <path d="M14 9H9v5H7V9H2V7h5V2h2v5h5z"></path>
@@ -9,15 +8,13 @@
           </button>
         </h1>
       </div>
-      
-      <div class="col-xs-12 col-md-12">
-        <ul *ngFor="let proyectos of pro">
-        <img src="/assets/portfolio.png" alt="foto de portfolio"/>
-        <div class="col-xs-4 col-md-4">
-        </div>
-        <div class="col-xs-8 col-md-8">
-          <h2 class="text">{{proyectos.nombre}} 
-            <button class="btn btn-dark" *ngIf="isLogin" routerLink="/editPro/{{proyectos.id}}"> 
+
+      <div class="col-xs-1 col-md-1"></div>
+
+      <div class="col-xs-3 col-md-3" *ngFor="let proyectos of pro">
+        <img src="/assets/portfolio.png" alt="foto de portfolio"/>       
+           <h2>{{proyectos.nombre}} 
+            <button class="btn btn" *ngIf="isLogin" routerLink="/editPro/{{proyectos.id}}"> 
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" 
                    fill="currentColor" class="mercado-match" width="25" height="25" focusable="false">
             <path d="M14.13 1.86a3 3 0 00-4.17 0l-7 7L1 15l6.19-2 6.94-7a3 3 0 000-4.16zm-8.36 9.71l-1.35-1.34L9.64 5 11 6.35z"></path>
@@ -32,8 +29,5 @@
       </h2>
           <p>{{proyectos.descripcion}}</p>
       </div>
-      </ul>
-
-    </div>
    </div>
     

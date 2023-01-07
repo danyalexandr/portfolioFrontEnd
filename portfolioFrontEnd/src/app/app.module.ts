@@ -21,10 +21,7 @@ import { EditEduComponent } from './components/education/edit-edu.component';
 import { EditProComponent } from './components/proyects/edit-pro.component';
 import { EditSkillComponent } from './components/skills/edit-skill.component';
 import { EditHeaderComponent } from './components/header/edit-header.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
-import {MatFormFieldModule} from '@angular/material/form-field';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -52,10 +49,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    BrowserAnimationsModule,
-    MatProgressBarModule,
-    MatFormFieldModule
-    
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
