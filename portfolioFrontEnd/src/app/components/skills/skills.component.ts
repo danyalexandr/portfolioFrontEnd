@@ -14,8 +14,6 @@ export class SkillsComponent implements OnInit {
 
   habilidad:Skill[] = [];
 
-  
-
   constructor(private router:Router, private auth: AuthorizationService, private skillSer: SkillSE) { }
 
   ngOnInit(): void {
