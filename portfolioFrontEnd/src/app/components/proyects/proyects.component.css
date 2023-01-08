@@ -16,10 +16,16 @@
     color: #fff;
   }
 img{
-    width: 100px;
-    height: 100px;
+    width: 250px;
+    height: 250px;
     padding: 4px;
     margin-bottom: 10px;  
 }
+.text {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-left: 100px;
+  padding: 100px 0px 100px 0px;
+}
+
 
 
