@@ -42,7 +42,7 @@ private local:string = '../../assets/data/user.json';
   public loginSimple(email:string, password:string):void{
     this.http.get(this.local).subscribe(
       (response:any) => {
-        if(response.token != null){
+        if(response.token != null && email === response.email && password === response.password){
           localStorage.setItem('token', response.token);
           this.router.navigate(['/home']);
         }

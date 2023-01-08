@@ -12,6 +12,6 @@ export class Experiencia {
         this.empresa = empresa;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
-        this.puesto = puesto;
+        this.lugar = lugar;
     }
 }

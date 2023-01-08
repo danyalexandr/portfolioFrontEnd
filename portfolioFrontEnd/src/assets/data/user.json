@@ -1,6 +1,6 @@
 {
   "email": "test@email.com",
-  "password": "123456789",
+  "password": "123456",
   "type": "Bearer",
   "token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsZ2ltZW5leiIsImV4cCI6MTY3MDU0MzQzNSwiaWF0IjoxNjcwNTI1NDM1fQ.HtSn26OHZESLvtzL8BVMTVejpHn_O5Gkk4gscLug87-DsZMgoczT9l9B6PUtOIfn2l3s3WrgMD7XHHdCfhvhpQ",
 
