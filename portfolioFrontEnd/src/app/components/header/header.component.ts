@@ -11,8 +11,7 @@ import { AuthorizationService } from 'src/app/services/authorization.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  //miPortfolio: any;
-  log:boolean;
+  
   user:Usuario[] = [];
   persona:Persona[] = [];
 
@@ -23,7 +22,11 @@ export class HeaderComponent implements OnInit {
     //console.log(this.user.username);
    
     //prueba api
-      this.auth.obtenerPersona().subscribe(data => {this.persona = data});
+     this.cargarPersona();
+      }
+
+      cargarPersona():void{
+        this.auth.obtenerPersona().subscribe(data => {this.persona = data});
       }
   
   public get isLogin():boolean {

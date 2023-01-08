@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthorizationService } from 'src/app/services/authorization.service';
 
 @Component({
@@ -11,14 +12,11 @@ import { AuthorizationService } from 'src/app/services/authorization.service';
 
 export class LoginComponent implements OnInit {
 
-  public email:string;
-  public passwordLocal:string;
+  public email:string = 'test@email.com';
+  public passwordLocal:string = '123456';
   
-  constructor(private formBuilder:FormBuilder, private auth:AuthorizationService) {
-    this.email = "";
-    this.passwordLocal = ""; 
-      
-  
+  constructor(private auth:AuthorizationService, private router:Router) {
+   
   }
   
 

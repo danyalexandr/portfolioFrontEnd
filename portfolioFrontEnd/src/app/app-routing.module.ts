@@ -24,7 +24,7 @@ const routes: Routes = [
   {path: 'editExp/:id', component:EditExpComponent},
   {path: 'editPro/:id', component:EditProComponent},
   {path: 'editEdu/:id', component:EditEduComponent},
-  {path: 'editHeader', component:EditHeaderComponent}
+  {path: 'editHeader/:id', component:EditHeaderComponent}
 
 ];
 

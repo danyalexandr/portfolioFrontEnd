@@ -6,11 +6,17 @@
           <h2 class="header">
             Editar nota
           </h2>
+
+          <div class="form-outline mb-3">
+            <label for="acercaDe" class="form-label"></label>
+            <input type="textarea" name="acercaDe" class="form-control" id="acercaDe" [(ngModel)]="acercaHeader.acercaDe">
+         
+          </div>
         
-          <!--<mat-form-field class="example-full-width">
-            <mat-label>Leave a comment</mat-label>
-            <textarea matInput placeholder="Acerca de mi..." [(ngModel)]="acercaHeader.acercaDe"></textarea>
-          </mat-form-field>-->
+        <!--  <mat-form-field class="example-full-width">
+            <mat-label>Agrega una nota.</mat-label>
+            <textarea matInput placeholder="Acerca de mi..." (input)="acercaHeader.acercaDe" [(ngModel)]="acercaHeader.acercaDe"></textarea>
+          </mat-form-field>  -->   
 
           <button type="submit" class="btn btn-success mb-3 col-12 col-sm-12 col-md-6" (ngSubmit)="onClick()">
             Editar
