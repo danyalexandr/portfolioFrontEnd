@@ -21,8 +21,8 @@ import { EditEduComponent } from './components/education/edit-edu.component';
 import { EditProComponent } from './components/proyects/edit-pro.component';
 import { EditSkillComponent } from './components/skills/edit-skill.component';
 import { EditHeaderComponent } from './components/header/edit-header.component';
-import { MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -50,8 +50,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    MatProgressSpinnerModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
