@@ -23,7 +23,12 @@ import { EditSkillComponent } from './components/skills/edit-skill.component';
 import { EditHeaderComponent } from './components/header/edit-header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatFormFieldModule} from '@angular/material/form-field';
+import { MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { MatProgressSpinnerModule} from '@angular/material/progress-spinner'
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 
 @NgModule({
@@ -54,7 +59,11 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     FormsModule,
     BrowserAnimationsModule,
     MatProgressBarModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatSlideToggleModule,
+    MatProgressSpinnerModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage())
   ],
   providers: [],
   bootstrap: [AppComponent]

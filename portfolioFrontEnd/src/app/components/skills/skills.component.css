@@ -4,6 +4,9 @@
 .col-xs-12.col-md-12{
     padding: 0px;
 }
+.col-xs-2.col-md-2{
+    display: block;
+}
 .btn.btn{
     background-color: silver;
     padding: 7px 7px;

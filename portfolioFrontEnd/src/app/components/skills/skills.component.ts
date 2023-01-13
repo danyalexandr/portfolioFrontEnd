@@ -12,6 +12,7 @@ import { SkillSE } from 'src/app/services/skillSE.service';
 })
 export class SkillsComponent implements OnInit {
 
+  isChecked:boolean = false;
   habilidad:Skill[] = [];
 
   constructor(private router:Router, private auth: AuthorizationService, private skillSer: SkillSE) { }
