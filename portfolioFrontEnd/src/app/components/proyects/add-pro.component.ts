@@ -12,13 +12,14 @@ export class AddProComponent implements OnInit {
 
   nombre:string = '';
   descripcion:string = '';
+  img:string = '';
   constructor(private router:Router, private proSer: ProyectoSE) { }
 
   ngOnInit(): void {
   }
 
   onClick():void{
-    const pro = new Proyectos(this.nombre, this.descripcion);
+    const pro = new Proyectos(this.nombre, this.descripcion, this.img);
     this.proSer.save(pro).subscribe(data => {alert("experiencia añadida OK");
      });
      this.router.navigate(["/"]);

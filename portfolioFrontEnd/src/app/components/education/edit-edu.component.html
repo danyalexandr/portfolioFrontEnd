@@ -25,6 +25,11 @@
             <label for="fechaFin" class="form-label">Fecha fin:</label>
             <input type="text" name="fechaFin"  class="form-control" id="fechaFin" [(ngModel)]="eduCarr.fechaFin">
           </div>
+
+          <div class="form-outline mb-3">
+            <label for="img" class="form-label">Imagen:</label>
+            <input type="file" name="img"  class="form-control" id="img" [(ngModel)]="eduCarr.img">
+          </div>
          
         <button type="submit" class="btn btn-success mb-3 col-12 col-sm-12 col-md-6" (ngSubmit)="onClick()">Editar</button>
         </form>

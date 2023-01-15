@@ -8,13 +8,18 @@
     <div class="form-outline mb-3">
         <label for="nombre" class="form-label">Proyecto</label>
         <input type="text" name="nombre" class="form-control" id="nombre" [(ngModel)]="nombre">
-     
       </div>
+
       <div class="form-outline mb-3">
         <label for="descripcion" class="form-label">Descripcion</label>
-        <input type="text" name="descripcion" class="form-control" id="descripcion" [(ngModel)]="descripcion">
-        
+        <input type="text" name="descripcion" class="form-control" id="descripcion" [(ngModel)]="descripcion"> 
       </div>
+
+      <div class="form-outline mb-3">
+        <label for="img" class="form-label">Imagen:</label>
+        <input type="file" name="img" class="form-control" id="img" [(ngModel)]="img"> 
+      </div>
+
       <button type="submit" class="btn btn-success mb-3 col-12 col-sm-12 col-md-6" (ngSubmit)="onClick()">
         Agregar
       </button>

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Persona } from 'src/app/model/persona';
 import { AuthorizationService } from 'src/app/services/authorization.service';
+import { ImagesService } from 'src/app/services/images.service';
 
 @Component({
   selector: 'app-header',
@@ -12,8 +13,9 @@ import { AuthorizationService } from 'src/app/services/authorization.service';
 export class HeaderComponent implements OnInit {
   
   persona:Persona[] = [];
+  image:string[] = [];
 
-  constructor(private router: Router, private auth: AuthorizationService) {}
+  constructor(private router: Router, private auth: AuthorizationService, public images:ImagesService) {}
 
   ngOnInit(): void {
        
@@ -23,6 +25,8 @@ export class HeaderComponent implements OnInit {
 
       cargarPersona():void{
         this.auth.obtenerPersona().subscribe(data => {this.persona = data});
+
+        this.images.getImages();
       }
   
   public get isLogin():boolean {

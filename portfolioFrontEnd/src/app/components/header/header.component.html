@@ -29,8 +29,8 @@
     <div class="row" *ngFor="let i of persona">
       <div class="col-xs-4 col-md-4">
        <div>
-        <img src="/assets/foto.png" id="perfil" alt="" class="img-fluid"/>
-         <button class="btn btn-dark" *ngIf="isLogin">
+        <img src="{{i.img}}" id="perfil" alt="" class="img-fluid"/>
+         <button class="btn btn-dark" *ngIf="isLogin" routerLink="/editHeader/{{i.id}}">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" 
                     fill="currentColor" class="mercado-match" width="16" height="16" focusable="false">
             <path d="M14.13 1.86a3 3 0 00-4.17 0l-7 7L1 15l6.19-2 6.94-7a3 3 0 000-4.16zm-8.36 
