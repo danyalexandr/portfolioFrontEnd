@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Educacion } from 'src/app/model/educacion';
 import { EducacionSE } from 'src/app/services/educacionSE.service';
 import { ImagesService } from 'src/app/services/images.service';
@@ -17,16 +17,20 @@ export class AddEduComponent implements OnInit {
   fechaFin:string;
   img:string;
 
-  constructor(private eduSer: EducacionSE, private router:Router, public images:ImagesService) { }
+  constructor(private eduSer: EducacionSE, private router:Router, public images:ImagesService,
+              private activatedroute:ActivatedRoute) { }
 
   ngOnInit(): void {
+
   }
 
   onClick():void{
     const exp = new Educacion(this.institucion, this.carrera, this.fechaInicio, this.fechaFin, this.img);
-    this.eduSer.save(exp).subscribe(data => {alert("experiencia añadida OK");
+    this.eduSer.save(exp).subscribe(data => {alert("educacion añadida OK");
      });
      this.router.navigate(["/"]);
     }
+
+    
 
 }

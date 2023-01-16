@@ -13,8 +13,7 @@ import { ImagesService } from 'src/app/services/images.service';
 export class HeaderComponent implements OnInit {
   
   persona:Persona[] = [];
-  image:string[] = [];
-
+  
   constructor(private router: Router, private auth: AuthorizationService, public images:ImagesService) {}
 
   ngOnInit(): void {

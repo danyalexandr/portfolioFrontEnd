@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Educacion } from 'src/app/model/educacion';
 import { AuthorizationService } from 'src/app/services/authorization.service';
 import { EducacionSE } from 'src/app/services/educacionSE.service';
+import { ImagesService } from 'src/app/services/images.service';
 
 @Component({
   selector: 'app-education',
@@ -16,7 +17,7 @@ export class EducationComponent implements OnInit {
  
 
   constructor(private router:Router, private auth: AuthorizationService, 
-              private eduSer:EducacionSE) { }
+              private eduSer:EducacionSE, public images:ImagesService) { }
 
   ngOnInit(): void {
     this.cargarEducacion();
@@ -29,6 +30,7 @@ export class EducationComponent implements OnInit {
 
   cargarEducacion():void{
     this.eduSer.lista().subscribe(data => {this.educacion = data});
+    this.images.getImages();
   }
 
   borrar(id:number): void{
@@ -39,4 +41,6 @@ export class EducationComponent implements OnInit {
     }
     this.router.navigate(["/"])
   }
+
+
 }
