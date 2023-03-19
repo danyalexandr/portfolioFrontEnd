@@ -37,6 +37,6 @@ export class SkillsComponent implements OnInit {
   }
 
   public get isLogin():boolean {
-    return this.auth.isUserLogin();
+    return this.auth.isAuthenticated();
     }
 }

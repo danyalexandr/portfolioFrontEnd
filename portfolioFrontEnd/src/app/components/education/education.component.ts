@@ -25,7 +25,7 @@ export class EducationComponent implements OnInit {
   }
 
   public get isLogin():boolean{
-    return this.auth.isUserLogin();
+    return this.auth.isAuthenticated();
   }
 
   cargarEducacion():void{

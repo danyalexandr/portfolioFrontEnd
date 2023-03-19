@@ -14,6 +14,6 @@ export class HomeComponent implements OnInit {
   }
 
   public get isLogin():boolean{
-    return this.auth.isUserLogin();
+    return this.auth.isAuthenticated();
   }
 }

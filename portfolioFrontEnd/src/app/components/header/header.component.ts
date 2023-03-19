@@ -29,7 +29,7 @@ export class HeaderComponent implements OnInit {
       }
   
   public get isLogin():boolean {
-  return this.auth.isUserLogin();
+  return this.auth.isAuthenticated();
   }
 
   public btnLogout(): void {
