@@ -9,7 +9,7 @@ form{
 background-color: rgba(0,0,0,0.1);
 width: 50%px;
 height: 600px;
-border-radius: 7%;
+
 
 }
 .mb-3{
@@ -30,7 +30,7 @@ color: grey;
     color: silver;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-.form-label{
+.form-group{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: silver;
+    color: white;
 }

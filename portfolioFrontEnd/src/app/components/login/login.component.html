@@ -1,11 +1,10 @@
 <div class="row my-5">
   <div class="col-sm-11 col-md-6 col-lg-4 mx-auto my-auto card">
-     <form>
+    <form (ngSubmit)="btnLogin()">
        <h1 class="header">
           Sign In, please.
        </h1>
 
-  <form (ngSubmit)="btnLogin()">
   <div class="form-group">
     <label for="email">User:</label>
     <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email">
