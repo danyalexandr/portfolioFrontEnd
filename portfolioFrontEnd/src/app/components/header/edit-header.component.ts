@@ -16,42 +16,31 @@ export class EditHeaderComponent implements OnInit {
   constructor(
     private auth: AuthorizationService,
     private router: Router,
-    private activatedroute: ActivatedRoute,
+    private aRouter: ActivatedRoute,
     public images: ImagesService
   ) {}
 
   ngOnInit(): void {
-    const id = this.activatedroute.snapshot.params['id'];
-    this.auth.detail(id).subscribe(
-      (data) => {
-        this.acercaHeader = data;
-      },
-      (err) => {
-        alert(err + this.acercaHeader.nombre + `persona/update/${id}`);
-        this.router.navigate(['']);
+    const id = this.aRouter.snapshot.params['id'];
+    this.auth.detail(id).subscribe((data) => {
+      this.acercaHeader = data;
+      },(err) => {
+        alert(err + this.acercaHeader + `persona/update/${id}`);
+        this.router.navigate(['/']);
       }
     );
   }
 
   onClick() {
-    const id = this.activatedroute.snapshot.params['id'];
-    this.acercaHeader.img = this.images.url
-    console.log('esto es la imagen en acerca de' + this.acercaHeader.img)
-    this.auth.update(id, this.acercaHeader).subscribe(
-      (data) => {
+    const id = this.aRouter.snapshot.params['id'];
+    this.auth.update(id, this.acercaHeader).subscribe((data) => {
         alert(' Editado con exito');
-      },
-      (err) => {
-        alert('Editado con exito');
-      }
-    );
+      },(err) => {alert('Editado con exito');})
     this.router.navigate(['/home']);
   }
 
   uploadImage($event: any) {
-    const id = this.activatedroute.snapshot.params['id'];
-    const name = 'perfil_' + id;
-    this.images.uploadImage($event, name);
+    this.images.uploadImage($event);
   }
 
 }

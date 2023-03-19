@@ -34,8 +34,6 @@ export class EditEduComponent implements OnInit {
   }
 
   uploadImage($event: any) {
-    const id = this.aRouter.snapshot.params['id'];
-    const name = 'educacion_' + id;
-    this.images.uploadImage($event, name);
+    this.images.uploadImage($event);
   }
 }

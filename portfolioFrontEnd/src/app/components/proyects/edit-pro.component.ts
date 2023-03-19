@@ -34,6 +34,6 @@ export class EditProComponent implements OnInit {
   uploadImage($event: any) {
     const id = this.activatedroute.snapshot.params['id'];
     const name = 'proyecto_' + id;
-    this.images.uploadImage($event, name);
+    this.images.uploadImage($event);
   }
   }

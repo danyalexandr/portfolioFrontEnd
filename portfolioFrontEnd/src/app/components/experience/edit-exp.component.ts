@@ -33,6 +33,6 @@ expLab:Experiencia = null;
   uploadImage($event: any) {
     const id = this.activatedRouter.snapshot.params['id'];
     const name = 'experiencia_' + id;
-    this.images.uploadImage($event, name);
+    this.images.uploadImage($event);
   }
 }

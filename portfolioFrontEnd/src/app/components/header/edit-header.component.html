@@ -3,26 +3,21 @@
         <div class="col-sm-11 col-md-6 col-lg-4 mx-auto my-auto card">
         
         <form class="example-form" (ngSubmit)="onClick()">
-          <h2 class="header">
-            Editar nota
-          </h2>
+          <h2 class="header">Editar nota</h2>
 
           <mat-form-field class="example-full-width">
             <mat-label>Agrega una nota...</mat-label>
-            <textarea matInput placeholder="Acerca de mi..." name="acercaDe" id="acercaDe" [(ngModel)]="acercaHeader.acercaDe">
-            </textarea>
+            <textarea matInput placeholder="Acerca de mi..." name="acercaDe" id="acercaDe" [(ngModel)]="acercaHeader.acercaDe"></textarea>
           </mat-form-field> 
 
-          <input type="file" (change)="uploadImage($event)">
+          <!--<input type="file" (change)="uploadImage($event)">-->
 
           <br/>
 
           <button type="submit" class="btn btn-success mb-3 col-12 col-sm-12 col-md-6" (ngSubmit)="onClick()">
             Editar
           </button>
-        </form>
-        
-        
+        </form> 
         </div>  
       </div>
     </div>

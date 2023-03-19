@@ -10,9 +10,9 @@ export class ImagesService {
 
   constructor(private storage:Storage) { }
 
-  public uploadImage($event:any, name:string){
+  public uploadImage($event:any){
     const file = $event.target.files[0];
-    const imgRef = ref(this.storage, `images/` + name);
+    const imgRef = ref(this.storage, `images/`);
 
     uploadBytes(imgRef, file)
     .then(response => console.log(response))
