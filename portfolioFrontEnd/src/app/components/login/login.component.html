@@ -5,21 +5,17 @@
           Sign In, please.
        </h1>
 
-  <div class="form-outline mb-3">
-      <label for="email" class="form-label">Email</label>
-    <input type="email" name="email" class="form-control" id="email" [(ngModel)]="email">
-      
-    </div>
-    <div class="form-outline mb-3">
-      <label for="password" class="form-label">Contraseña</label>
-      <input type="password" name="password"  class="form-control" id="password" [(ngModel)]="passwordLocal">
-      
-    </div>
-    <button type="button" class="btn btn-primary mb-3 col-12 col-sm-12 col-md-6" (click)="btnLogin()">
-      Iniciar sesion
-    </button>
-  </form>
-</div>  
-</div>
+  <form (ngSubmit)="btnLogin()">
+  <div class="form-group">
+    <label for="email">User:</label>
+    <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email">
+  </div>
+  <div class="form-group">
+    <label for="password">Contraseña:</label>
+    <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password">
+  </div>
+  <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+</form>
 
 <!---->
+

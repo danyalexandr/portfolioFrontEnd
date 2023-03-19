@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/model/usuario';
 import { AuthorizationService } from 'src/app/services/authorization.service';
@@ -13,9 +12,9 @@ import { AuthorizationService } from 'src/app/services/authorization.service';
 
 export class LoginComponent implements OnInit {
 
-  user:Usuario[] = [];
   public email:string;
-  public passwordLocal:string;
+  public password:string;
+  public errorMessage: string;
   
   constructor(private auth:AuthorizationService, private router:Router) {
    
@@ -24,8 +23,17 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   
-  public btnLogin():void{
-    this.auth.loginSimple(this.email, this.passwordLocal);
+  btnLogin(){
+    this.auth.login(this.email, this.password)
+    .subscribe(
+      () => {
+        this.router.navigate(['/home']);
+      },
+      error=> {
+        console.error(error);
+        this.errorMessage = 'Credenciales incorrectas, Intente de nuevo.';
+      }
+    );
     //this.auth.obtenerDatos().subscribe(data => {this.user = data});;
   }
 

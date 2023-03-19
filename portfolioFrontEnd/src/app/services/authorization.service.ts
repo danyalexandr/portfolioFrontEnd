@@ -1,9 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { Router, UrlSerializer } from '@angular/router';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Token } from '@angular/compiler';
 import { Persona } from '../model/persona';
 import { Usuario } from '../model/usuario';
 
@@ -13,14 +11,9 @@ import { Usuario } from '../model/usuario';
 })
 export class AuthorizationService {
 
-private local:string = '../../assets/data/user.json';
-
-  private strUrlApi:string;
+ private strUrlApi = 'https://portfolio-backend-danyalexandr.koyeb.app';
       
-  constructor(private http: HttpClient, private router: Router) { 
-
-    this.strUrlApi = 'https://portfolio-backend-danyalexandr.koyeb.app';
-  } 
+  constructor(private http: HttpClient) { } 
   
   public obtenerDatos(): Observable<Usuario[]>{
     return this.http.get<Usuario[]>('https://portfolio-backend-danyalexandr.koyeb.app/user/traer');
@@ -39,25 +32,26 @@ private local:string = '../../assets/data/user.json';
     return this.http.put<any>(`https://portfolio-backend-danyalexandr.koyeb.app/persona/update/${id}`, persona);
   }
 
-  public loginSimple(email:string, password:string):void{
-    this.http.get(this.local).subscribe(
-      (response:any) => {
-        if(response.token != null && email === response.email && password === response.password){
+  login(email: string, password: string) {
+    return this.http.post<any>(this.strUrlApi, { email: email, password: password })
+      .pipe(
+        map(response => {
+          // Guardar token de autenticación en localStorage
           localStorage.setItem('token', response.token);
-          this.router.navigate(['/home']);
-        }
-      }
-    );
+        })
+      );
   }
 
-  public logout():void{
+  logout() {
+    // Eliminar token de autenticación de localStorage
     localStorage.removeItem('token');
-    this.router.navigate(['/']);
   }
 
-  public isUserLogin():boolean{
-    return (localStorage.getItem('token') != null);
-  }
+  isAuthenticated(): boolean {
+    // Verificar si existe un token de autenticación en localStorage
+    const token = localStorage.getItem('token');
+    return token !== null;
    
 }
- 
+
+}
