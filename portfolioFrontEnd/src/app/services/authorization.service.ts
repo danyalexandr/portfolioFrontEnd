@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { Persona } from '../model/persona';
 import { Usuario } from '../model/usuario';
 
@@ -10,13 +9,22 @@ import { Usuario } from '../model/usuario';
   providedIn: 'root'
 })
 export class AuthorizationService {
-
- private strUrlApi = 'https://portfolio-backend-danyalexandr.koyeb.app';
+  
+  private usuario: Usuario[];
+  isAuthenticated: boolean = false;     
       
   constructor(private http: HttpClient) { } 
   
-  public obtenerDatos(): Observable<Usuario[]>{
+  obtenerDatos(): Observable<Usuario[]>{
     return this.http.get<Usuario[]>('https://portfolio-backend-danyalexandr.koyeb.app/user/traer');
+  }
+
+  setDatos(usuario:Usuario[]){
+    this.usuario = usuario;
+  }
+
+  getDatosFromMemory(): Usuario[] {
+    return this.usuario;
   }
   
   //retornar desde apirest
@@ -32,26 +40,7 @@ export class AuthorizationService {
     return this.http.put<any>(`https://portfolio-backend-danyalexandr.koyeb.app/persona/update/${id}`, persona);
   }
 
-  login(email: string, password: string) {
-    return this.http.post<any>(this.strUrlApi, { email: email, password: password })
-      .pipe(
-        map(response => {
-          // Guardar token de autenticación en localStorage
-          localStorage.setItem('token', response.token);
-        })
-      );
-  }
-
-  logout() {
-    // Eliminar token de autenticación de localStorage
-    localStorage.removeItem('token');
-  }
-
-  isAuthenticated(): boolean {
-    // Verificar si existe un token de autenticación en localStorage
-    const token = localStorage.getItem('token');
-    return token !== null;
-   
-}
-
+  logout(){
+    this.isAuthenticated = false;
+   }
 }

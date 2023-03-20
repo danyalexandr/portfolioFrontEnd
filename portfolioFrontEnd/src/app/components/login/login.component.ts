@@ -14,27 +14,32 @@ export class LoginComponent implements OnInit {
 
   public email:string;
   public password:string;
-  public errorMessage: string;
+  public usuario:Usuario[];
+  
   
   constructor(private auth:AuthorizationService, private router:Router) {
    
   }
   
   ngOnInit(): void {
+
+    this.auth.obtenerDatos().subscribe(usuario => {
+      this.auth.setDatos(usuario);
+    });
   }
   
-  btnLogin(){
-    this.auth.login(this.email, this.password)
-    .subscribe(
-      () => {
-        this.router.navigate(['/home']);
-      },
-      error=> {
-        console.error(error);
-        this.errorMessage = 'Credenciales incorrectas, Intente de nuevo.';
-      }
-    );
-    //this.auth.obtenerDatos().subscribe(data => {this.user = data});;
-  }
+  btnLogin() {
+    this.usuario = this.auth.getDatosFromMemory();
+  
+    const usuario = this.usuario.find(u => u.username === this.email && u.password === this.password); 
+  
+    if(usuario){
+      this.auth.isAuthenticated = true;
+      this.router.navigate(['/home']); // Redireccionar a la página de inicio
+    } else {
+      alert("Error, por favor intente nuevamente");
+    }
 
  }
+ 
+}
