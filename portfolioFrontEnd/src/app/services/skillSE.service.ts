@@ -11,22 +11,22 @@ export class SkillSE {
   constructor(private http: HttpClient) { }
 
   public lista(): Observable<Skill[]>{
-    return this.http.get<Skill[]>('https://portfolio-backend-danyalexandr.koyeb.app/tecno/lista');
+    return this.http.get<Skill[]>('https://portfolio-backend-danyalexandr.koyeb.app/api/tecno/lista');
   }
 
   public detail(id:number): Observable<Skill>{
-    return this.http.get<Skill>(`https://portfolio-backend-danyalexandr.koyeb.app/tecno/detail/${id}`);
+    return this.http.get<Skill>(`https://portfolio-backend-danyalexandr.koyeb.app/api/tecno/detail/${id}`);
   }
 
   public save(skill:Skill):Observable<any>{
-    return this.http.post<any>('https://portfolio-backend-danyalexandr.koyeb.app/tecno/crear', skill);
+    return this.http.post<any>('https://portfolio-backend-danyalexandr.koyeb.app/api/tecno/crear', skill);
   }
 
   public update(id:number, skill:Skill):Observable<any>{
-    return this.http.put<any>(`https://portfolio-backend-danyalexandr.koyeb.app/tecno/update/${id}`, skill);
+    return this.http.put<any>(`https://portfolio-backend-danyalexandr.koyeb.app/api/tecno/update/${id}`, skill);
   }
 
   public delete(id:number):Observable<any>{
-    return this.http.delete<any>(`https://portfolio-backend-danyalexandr.koyeb.app/tecno/borrar/${id}`);
+    return this.http.delete<any>(`https://portfolio-backend-danyalexandr.koyeb.app/api/tecno/borrar/${id}`);
   }
 }

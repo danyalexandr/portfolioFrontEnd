@@ -11,22 +11,22 @@ export class EducacionSE {
   constructor(private http: HttpClient) { }
 
   public lista(): Observable<Educacion[]>{
-    return this.http.get<Educacion[]>('https://portfolio-backend-danyalexandr.koyeb.app/educacion/lista');
+    return this.http.get<Educacion[]>('https://portfolio-backend-danyalexandr.koyeb.app/api/educacion/lista');
   }
 
   public detail(id:number): Observable<Educacion>{
-    return this.http.get<Educacion>(`https://portfolio-backend-danyalexandr.koyeb.app/educacion/detail/${id}`);
+    return this.http.get<Educacion>(`https://portfolio-backend-danyalexandr.koyeb.app/api/educacion/detail/${id}`);
   }
 
   public save(educacion:Educacion):Observable<any>{
-    return this.http.post<any>('https://portfolio-backend-danyalexandr.koyeb.app/educacion/crear', educacion);
+    return this.http.post<any>('https://portfolio-backend-danyalexandr.koyeb.app/api/educacion/crear', educacion);
   }
 
   public update(id:number, educacion:Educacion):Observable<any>{
-    return this.http.put<any>(`https://portfolio-backend-danyalexandr.koyeb.app/educacion/update/${id}`, educacion);
+    return this.http.put<any>(`https://portfolio-backend-danyalexandr.koyeb.app/api/educacion/update/${id}`, educacion);
   }
 
   public delete(id:number):Observable<any>{
-    return this.http.delete<any>(`https://portfolio-backend-danyalexandr.koyeb.app/educacion/borrar/${id}`);
+    return this.http.delete<any>(`https://portfolio-backend-danyalexandr.koyeb.app/api/educacion/borrar/${id}`);
   }
 }

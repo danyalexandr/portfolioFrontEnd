@@ -16,7 +16,7 @@ export class AuthorizationService {
   constructor(private http: HttpClient) { } 
   
   obtenerDatos(): Observable<Usuario[]>{
-    return this.http.get<Usuario[]>('https://portfolio-backend-danyalexandr.koyeb.app/user/traer');
+    return this.http.get<Usuario[]>('https://portfolio-backend-danyalexandr.koyeb.app/api/user/traer');
   }
 
   setDatos(usuario:Usuario[]){
@@ -29,15 +29,15 @@ export class AuthorizationService {
   
   //retornar desde apirest
   public obtenerPersona(): Observable <Persona[]> {
-    return this.http.get<Persona[]>('https://portfolio-backend-danyalexandr.koyeb.app/persona/lista'); 
+    return this.http.get<Persona[]>('https://portfolio-backend-danyalexandr.koyeb.app/api/persona/lista'); 
   }
 
   public detail(id:number): Observable<Persona>{
-    return this.http.get<Persona>(`https://portfolio-backend-danyalexandr.koyeb.app/persona/detail/${id}`);
+    return this.http.get<Persona>(`https://portfolio-backend-danyalexandr.koyeb.app/api/persona/detail/${id}`);
   }
 
   public update(id:number, persona:Persona):Observable<any>{
-    return this.http.put<any>(`https://portfolio-backend-danyalexandr.koyeb.app/persona/update/${id}`, persona);
+    return this.http.put<any>(`https://portfolio-backend-danyalexandr.koyeb.app/api/persona/update/${id}`, persona);
   }
 
   logout(){
