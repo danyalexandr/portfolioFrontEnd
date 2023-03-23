@@ -130,6 +130,12 @@
     .image-fluid{
       text-align: center;
     }
+
+  }
+  .contador{
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: large;
   }
  
   
