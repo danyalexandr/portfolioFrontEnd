@@ -135,7 +135,9 @@
   .contador{
     margin-left: 20px;
     margin-top: 20px;
-    font-size: large;
+    font-size: small;
+    font-weight: normal;
+    color: #000;
   }
  
   
