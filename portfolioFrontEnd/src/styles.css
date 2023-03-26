@@ -1,17 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
-.row{
-    background-color: azure;
-}
 .text{
     margin: 80px 0px 30px 100px;
     
 }
-.container-fluid{
-    background-color: rgba(0, 0, 0, 0.5);
-}
 
-html, body { 
-    height: 100%; 
-    background-color: azure;
+body { 
+    
+    background-image: url('/assets/background5.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
 
