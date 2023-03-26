@@ -96,8 +96,8 @@
   @media (min-width: 700px){
     #perfil{
       position: relative;
-      width: 200px;
-      height: 200px;
+      width: 250px;
+      height: 250px;
       border-radius: 50% ;
       top: -75px;
       margin-left: 40px;

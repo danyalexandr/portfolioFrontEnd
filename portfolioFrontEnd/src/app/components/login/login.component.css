@@ -1,7 +1,7 @@
 .container{
     width: 50%;
     height: 50%;
-    box-sizing: unset;    
+    box-sizing: unset;
     padding: 150px 300px 300px 300px;
     background-color: grey;
 }
@@ -9,7 +9,6 @@ form{
 background-color: rgba(0,0,0,0.1);
 width: 50%px;
 height: 600px;
-
 
 }
 .mb-3{
@@ -19,6 +18,8 @@ height: 600px;
 margin: 100px 160px;
 background-color: rgba(0,0,0,0.1);
 border: 3px solid silver;
+align-self: center;
+text-align: justify;
 }
 .btn.btn-primary:hover{
 background-color: #fff;
@@ -27,10 +28,10 @@ color: grey;
 .header{
     text-align: center;
     padding-top: 40px;
-    color: silver;
+    color: darkgray;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .form-group{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: white;
+    color: darkgray;
 }
