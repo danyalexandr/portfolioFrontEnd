@@ -1,4 +1,4 @@
-<div class="container" *ngIf="expLab">
+<div class="container" *ngIf="experienciaLaboral">
 <div class="row my-5">
     <div class="col-sm-11 col-md-6 col-lg-4 mx-auto my-auto card">
   <form (ngSubmit)="onClick()" class="m-5">
@@ -8,32 +8,32 @@
   
     <div class="form-outline mb-3">
       <label for="empresa" class="form-label">Empresa:</label>
-      <input type="text" name="empresa"  class="form-control" id="empresa" [(ngModel)]="expLab.empresa">
+      <input type="text" name="empresa"  class="form-control" id="empresa" [(ngModel)]="experienciaLaboral.empresa">
     </div>
     
     <div class="form-outline mb-3">
         <label for="puesto" class="form-label">Puesto:</label>
-        <input type="text" name="puesto"  class="form-control" id="puesto" [(ngModel)]="expLab.puesto">
+        <input type="text" name="puesto"  class="form-control" id="puesto" [(ngModel)]="experienciaLaboral.puesto">
       </div>
 
       <div class="form-outline mb-3">
         <label for="fechaInicio" class="form-label">Fecha Inicio:</label>
-        <input type="text" name="fechaInicio"  class="form-control" id="fechaInicio" [(ngModel)]="expLab.fechaInicio">
+        <input type="text" name="fechaInicio"  class="form-control" id="fechaInicio" [(ngModel)]="experienciaLaboral.fechaInicio">
       </div>
 
       <div class="form-outline mb-3">
         <label for="fechaFin" class="form-label">Fecha Fin:</label>
-        <input type="text" name="fechaFin"  class="form-control" id="fechaFin" [(ngModel)]="expLab.fechaFin">
+        <input type="text" name="fechaFin"  class="form-control" id="fechaFin" [(ngModel)]="experienciaLaboral.fechaFin">
       </div>
 
       <div class="form-outline mb-3">
         <label for="lugar" class="form-label">Lugar:</label>
-        <input type="text" name="lugar"  class="form-control" id="lugar" [(ngModel)]="expLab.lugar">
+        <input type="text" name="lugar"  class="form-control" id="lugar" [(ngModel)]="experienciaLaboral.lugar">
       </div>
 
       <div class="form-outline mb-3">
         <label for="img" class="form-label">Imagen:</label>
-        <input type="file" (change)="uploadImage($event)">
+        <input type="file" (change)="cargarImagen($event)">
       </div>
      
     <button type="submit" class="btn btn-success mb-3 col-12 col-sm-12 col-md-6" (ngSubmit)="onClick()">Editar</button>

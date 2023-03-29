@@ -37,7 +37,7 @@ export class EducationComponent implements OnInit {
     if(id != undefined){
       this.eduSer.delete(id).subscribe(data => {
         this.cargarEducacion();
-      },err => alert(err + "borrado correctamente"));
+      },err => alert(err + "Error borrar()"));
     }
     this.router.navigate(["/"])
   }

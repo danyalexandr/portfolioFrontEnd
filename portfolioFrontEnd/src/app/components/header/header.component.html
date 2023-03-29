@@ -1,6 +1,5 @@
   <div class="toolbar" role="banner">
    <img width="150" alt="Argentina programa Logo" src="assets/APLogo.png"/>
-   <p class="contador">Visitas: {{ visitas }}</p>
     <div class="spacer"></div>
          
   <a aria-label="gitHub" target="_blank" rel="noopener" href="https://github.com/danyalexandr/portfolioFrontEnd" title="gitHub">
@@ -29,14 +28,17 @@
     <div class="row" *ngFor="let i of persona">
       <div class="col-xs-4 col-md-4">
        <div>
-        <img src="{{i.img}}" id="perfil" alt="" class="img-fluid"/>
-         <button class="btn btn-dark" *ngIf="isLogin" routerLink="/editHeader/{{i.id}}">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" 
+        <img src="{{i.img}}" id="perfil" alt="foto de perfil" class="img-fluid"/>
+        <input type="file" id="inputFile" accept=".png, .jpg, .jpeg" multiple (change)="cargarImagen($event)" style="display: none;">
+            <button class="btn btn-dark" *ngIf="isLogin" for="inputFile">
+               <label for="inputFile" class="labelInputFile">
+                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" 
                     fill="currentColor" class="mercado-match" width="16" height="16" focusable="false">
             <path d="M14.13 1.86a3 3 0 00-4.17 0l-7 7L1 15l6.19-2 6.94-7a3 3 0 000-4.16zm-8.36 
                      9.71l-1.35-1.34L9.64 5 11 6.35z"></path>
-          </svg>
-         </button>
+          </svg>  
+               </label>
+              </button>         
          </div>
         <p 
         class="nombre"> <strong>{{i.nombre}} {{i.apellido}}</strong>
@@ -45,7 +47,7 @@
         class="p1">{{i.puesto}}
       </p>
       </div>
-      
+    
       <div class="col-xs-6 col-md-6">
         <div>
           <h1 class="text">Acerca de mi

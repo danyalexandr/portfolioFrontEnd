@@ -11,6 +11,7 @@ import { ImagesService } from 'src/app/services/images.service';
 })
 export class AddExpComponent implements OnInit {
 
+  imagenes:any[] = [];
   puesto:string = '';
   empresa:string = '';
   fechaInicio:string = '';
@@ -18,14 +19,29 @@ export class AddExpComponent implements OnInit {
   lugar:string = '';
   img:string = '';
 
-  constructor(private expSer:ExperienciaSE, private router: Router, public images:ImagesService) { }
+  constructor(private experienciaService:ExperienciaSE, private router: Router, public imagesService:ImagesService) { }
 
   ngOnInit(): void {
   }
 
+  cargarImagen(event:any){
+    const nombre = 'experiencia_';
+    let archivos = event.target.files
+    let reader = new FileReader();
+    
+    reader.readAsDataURL(archivos[0]);
+    reader.onloadend = () => {
+      this.imagenes.push(reader.result);
+      this.imagesService.subirImagen(nombre + "_" + Date.now(), reader.result)
+      .then(urlImage => {console.log(urlImage);
+        this.img = urlImage;
+      });                       
+    }
+  }
+
   onClick():void{
   const exp = new Experiencia(this.puesto, this.empresa, this.fechaInicio, this.fechaFin, this.lugar, this.img);
-  this.expSer.save(exp).subscribe(data => {alert("experiencia añadida OK");
+  this.experienciaService.save(exp).subscribe(data => {alert( data + "experiencia añadida OK");
    });
    this.router.navigate(["/"]);
   }

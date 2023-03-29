@@ -1,9 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
 import { Persona } from 'src/app/model/persona';
 import { AuthorizationService } from 'src/app/services/authorization.service';
-import { ContadorVisitasService } from 'src/app/services/contador-visitas-service';
 import { ImagesService } from 'src/app/services/images.service';
 
 @Component({
@@ -13,28 +11,38 @@ import { ImagesService } from 'src/app/services/images.service';
 })
 export class HeaderComponent implements OnInit {
   
-  visitas: number;
+  
+  constructor(private router: Router, private auth: AuthorizationService, public imagesService:ImagesService) {}
+  
   persona:Persona[] = [];
-  
-  constructor(private router: Router, private auth: AuthorizationService, public images:ImagesService,
-              private contadorVisitasService :ContadorVisitasService) {}
-
+  imagenes:any[] = [];
+   
   ngOnInit(): void {
-
-    this.contadorVisitasService.obtenerVisitas().subscribe(visitas => {
-      this.visitas = visitas;
-    });
   
-       
-    //prueba api
-     this.cargarPersona();
-      }
+  this.cargarPersona();
 
-      cargarPersona():void{
-        this.auth.obtenerPersona().subscribe(data => {this.persona = data});
+  }   
 
-        this.images.getImages();
-      }
+  cargarImagen(event:any){
+  let archivos = event.target.files
+  let reader = new FileReader();
+  let nombre:string = "persona";
+            
+  reader.readAsDataURL(archivos[0]);
+  reader.onloadend = () => {
+  this.imagenes.push(reader.result);
+  this.imagesService.subirImagen(nombre + "_" + Date.now(), reader.result)
+  .then(urlImage => {console.log(urlImage);
+  this.imagesService.url = urlImage;
+  });                       
+  }
+ }
+
+  //a la base de datos?
+  cargarPersona():void{
+  this.auth.obtenerPersona().subscribe(data => {this.persona = data});
+  this.imagesService.getImages();
+  }
   
   public get isLogin():boolean {
   return this.auth.isAuthenticated;

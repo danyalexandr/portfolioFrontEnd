@@ -11,7 +11,7 @@ import { ImagesService } from 'src/app/services/images.service';
 })
 export class EditEduComponent implements OnInit {
 
-  img:string;
+  imagenes:any[] = [];
   eduCarr:Educacion = null;
   constructor(private eduSer:EducacionSE, private router: Router, private aRouter:ActivatedRoute,
               public images:ImagesService) { }
@@ -33,7 +33,19 @@ export class EditEduComponent implements OnInit {
     this.router.navigate(['/home']);
   }
 
-  uploadImage($event: any) {
-    this.images.uploadImage($event);
-  }
+  cargarImagen(event:any){
+    let archivos = event.target.files
+    let reader = new FileReader();
+    let nombre:string = "hardcode";
+              
+    reader.readAsDataURL(archivos[0]);
+    reader.onloadend = () => {
+    this.imagenes.push(reader.result);
+    this.images.subirImagen(nombre + "_" + Date.now(), reader.result)
+    .then(urlImage => {console.log(urlImage);
+    this.images.url = urlImage;
+    console.log('this.images.url' + ' ' + this.images.url);
+    });                       
+    }
+   }
 }

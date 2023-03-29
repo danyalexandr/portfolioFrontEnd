@@ -11,28 +11,43 @@ import { ImagesService } from 'src/app/services/images.service';
 })
 export class EditExpComponent implements OnInit {
 
-expLab:Experiencia = null;
-  constructor(private expSer:ExperienciaSE, private router: Router, private activatedRouter:ActivatedRoute,
-              public images:ImagesService) { }
+experienciaLaboral:Experiencia = null;
+imagenes:any[] = [];
+
+  constructor(private experienciaServices:ExperienciaSE, private router: Router, 
+              private activatedRouter:ActivatedRoute,
+              public imagesService:ImagesService) { }
 
   ngOnInit(): void {
     const id = this.activatedRouter.snapshot.params['id'];
-    this.expSer.detail(id).subscribe(data =>{ this.expLab = data 
-    }, err => {alert(err + this.expLab + `/update/${id}`); this.router.navigate([""])});
+    this.experienciaServices.detail(id).subscribe(data =>{ this.experienciaLaboral = data 
+    }, err => {alert(err + this.experienciaLaboral + `/api/update/${id}`); 
+    this.router.navigate(["/"])});
   }
 
   onClick():void{
     const id = this.activatedRouter.snapshot.params['id'];
-    this.expLab.img = this.images.url
-    this.expSer.update(id, this.expLab).subscribe(data => {
-      alert(' Editado con exito');
-    },err => {alert('Editado con exito');})
+    this.experienciaServices.update(id, this.experienciaLaboral).subscribe(data => {
+      alert(data + ' Editado con exito');
+    },err => {alert(err + 'Error Editando');})
     this.router.navigate(['/home']);
   }
-
-  uploadImage($event: any) {
-    const id = this.activatedRouter.snapshot.params['id'];
-    const name = 'experiencia_' + id;
-    this.images.uploadImage($event);
+  
+    //this.images.uploadImage($event);
+cargarImagen(event:any){
+const id = this.activatedRouter.snapshot.params['id'];
+const nombre = 'experiencia_' + id;
+let archivos = event.target.files
+let reader = new FileReader();
+                
+reader.readAsDataURL(archivos[0]);
+reader.onloadend = () => {
+this.imagenes.push(reader.result);
+this.imagesService.subirImagen(nombre + "_" + Date.now(), reader.result)
+.then(urlImage => {console.log(urlImage);
+this.experienciaLaboral.img = urlImage;
+console.log('this.imagesService.url' + ' ' + this.experienciaLaboral.img);
+});                       
   }
+ }
 }

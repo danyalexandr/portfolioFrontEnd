@@ -10,7 +10,8 @@ import { ProyectoSE } from 'src/app/services/proyectoSE.service';
   styleUrls: ['./edit-pro.component.css']
 })
 export class EditProComponent implements OnInit {
-
+  
+  imagenes:any[] = [];
   proNom:Proyectos = null;
   constructor(private router:Router, private proSer:ProyectoSE, private activatedroute: ActivatedRoute,
               public images:ImagesService) { }
@@ -26,14 +27,30 @@ export class EditProComponent implements OnInit {
     const id = this.activatedroute.snapshot.params['id'];
     this.proNom.img = this.images.url
     this.proSer.update(id, this.proNom).subscribe(data => {
-      alert(' Editado con exito');
-    },err => {alert('Editado con exito');})
+      alert(data + ' Editado con exito');
+    },err => {alert(err + 'Editado fallo');})
     this.router.navigate(['/home']);
   }
 
-  uploadImage($event: any) {
+  /*uploadImage($event: any) {
     const id = this.activatedroute.snapshot.params['id'];
     const name = 'proyecto_' + id;
     this.images.uploadImage($event);
-  }
+  }*/
+  cargarImagen(event:any){
+    const id = this.activatedroute.snapshot.params['id'];
+    const nombre = 'experiencia_' + id;
+    let archivos = event.target.files
+    let reader = new FileReader();
+              
+    reader.readAsDataURL(archivos[0]);
+    reader.onloadend = () => {
+    this.imagenes.push(reader.result);
+    this.images.subirImagen(nombre + "_" + Date.now(), reader.result)
+    .then(urlImage => {console.log(urlImage);
+    this.images.url = urlImage;
+    console.log('this.images.url' + ' ' + this.images.url);
+    });                       
+    }
+   }
   }

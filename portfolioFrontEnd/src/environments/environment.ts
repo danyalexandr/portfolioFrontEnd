@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  firebase: {
+  firebaseConfig: {
     projectId: 'portfoliofrontend-danyalexandr',
     appId: '1:1022048975269:web:ce2090f81481a047ec904c',
     storageBucket: 'portfoliofrontend-danyalexandr.appspot.com',
@@ -13,7 +13,7 @@ export const environment = {
     messagingSenderId: '1022048975269',
     measurementId: 'G-1M80MB0NDE',
   },
-  production: true
+  production: false
 };
 
 /*

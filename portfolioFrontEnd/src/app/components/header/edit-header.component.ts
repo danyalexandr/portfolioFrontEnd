@@ -10,8 +10,8 @@ import { ImagesService } from 'src/app/services/images.service';
   styleUrls: ['./edit-header.component.css'],
 })
 export class EditHeaderComponent implements OnInit {
-  image: string[] = [];
-  acercaHeader: Persona = null;
+  acercaHeader:Persona = null;
+  imagenes:any[] = [];
 
   constructor(
     private auth: AuthorizationService,
@@ -23,10 +23,10 @@ export class EditHeaderComponent implements OnInit {
   ngOnInit(): void {
     const id = this.aRouter.snapshot.params['id'];
     this.auth.detail(id).subscribe((data) => {
-      this.acercaHeader = data;
-      },(err) => {
-        alert(err + this.acercaHeader + `persona/update/${id}`);
-        this.router.navigate(['/']);
+    this.acercaHeader = data;
+    },(err) => {
+    alert(err + this.acercaHeader + `api/persona/update/${id}`);
+    this.router.navigate(['/']);
       }
     );
   }
@@ -34,13 +34,26 @@ export class EditHeaderComponent implements OnInit {
   onClick() {
     const id = this.aRouter.snapshot.params['id'];
     this.auth.update(id, this.acercaHeader).subscribe((data) => {
-        alert(' Editado con exito');
-      },(err) => {alert('Editado con exito');})
+        alert(data + ' Editado con exito');
+      },(err) => {alert(err + 'Error al Editar');})
     this.router.navigate(['/home']);
   }
 
-  uploadImage($event: any) {
-    this.images.uploadImage($event);
-  }
+  cargarImagen(event:any){
+    const id = this.aRouter.snapshot.params['id'];
+    const nombre = 'persona_' + id;
+    let archivos = event.target.files
+    let reader = new FileReader();
+                  
+    reader.readAsDataURL(archivos[0]);
+    reader.onloadend = () => {
+    this.imagenes.push(reader.result);
+    this.images.subirImagen(nombre + "_" + Date.now(), reader.result)
+    .then(urlImage => {console.log(urlImage);
+    this.images.url = urlImage;
+    console.log('this.images.url' + ' ' + this.images.url);
+    });                       
+    }
+   }
 
 }

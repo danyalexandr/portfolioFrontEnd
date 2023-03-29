@@ -62,7 +62,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     MatFormFieldModule,
     MatSlideToggleModule,
     MatProgressSpinnerModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideStorage(() => getStorage())
   ],
   providers: [],
