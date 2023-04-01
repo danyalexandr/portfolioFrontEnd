@@ -1,3 +1,4 @@
+import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Storage, ref, uploadBytes, listAll, getDownloadURL} from '@angular/fire/storage';
 import firebase from 'firebase/compat/app';
@@ -16,6 +17,12 @@ export class ImagesService {
   storageRef = firebase.app().storage().ref();
 
   constructor(private storage:Storage) { }
+
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json'
+    })
+  };
 
   async subirImagen(nombre:string, imgBase64:any){
 
