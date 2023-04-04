@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/model/usuario';
 import { AuthorizationService } from 'src/app/services/authorization.service';
@@ -10,36 +10,41 @@ import { AuthorizationService } from 'src/app/services/authorization.service';
 })
 
 
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
-  public email:string;
-  public password:string;
+  public email:string = '';
+  public password:string = '';
   public usuario:Usuario[];
   
   
-  constructor(private auth:AuthorizationService, private router:Router) {
+  constructor(private authService:AuthorizationService, private router:Router) {
    
   }
   
   ngOnInit(): void {
-
-    this.auth.obtenerDatos().subscribe(usuario => {
-      this.auth.setDatos(usuario);
-    });
   }
   
-  btnLogin() {
-    this.usuario = this.auth.getDatosFromMemory();
-  
-    const usuario = this.usuario.find(u => u.username === this.email && u.password === this.password); 
-  
-    if(usuario){
-      this.auth.isAuthenticated = true;
-      this.router.navigate(['/home']); // Redireccionar a la página de inicio
-    } else {
-      alert("Error, por favor intente nuevamente");
+//test de login
+ onSubmit() {
+  this.authService.login(this.email, this.password).subscribe(
+    response => {
+      console.log('Inicio de sesión exitoso:', response);
+      this.router.navigate(['/home']);
+    },
+    error => {
+      console.error('Error al iniciar sesión:', error);
     }
+  );
+}
 
- }
+onLogout() {
+  this.authService.logout();
+  console.log('Sesión cerrada');
+}
+
+isAuthenticated(): boolean {
+  this.router.navigate(['/']);
+  return this.authService.isAuthenticated();
+}
  
 }

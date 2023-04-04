@@ -45,10 +45,11 @@ export class HeaderComponent implements OnInit {
   }
   
   public get isLogin():boolean {
-  return this.auth.isAuthenticated;
+  return this.auth.isAuthenticated();
   }
 
   public btnLogout(): void {
     this.auth.logout();
+    this.router.navigate(['/']);
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthorizationService } from 'src/app/services/authorization.service';
 
 @Component({
@@ -14,6 +14,6 @@ export class HomeComponent implements OnInit {
   }
 
   public get isLogin():boolean{
-    return this.auth.isAuthenticated;
+    return this.auth.isAuthenticated();
   }
 }

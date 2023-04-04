@@ -1,17 +1,17 @@
 <div class="row my-5">
   <div class="col-sm-11 col-md-6 col-lg-4 mx-auto my-auto card">
-    <form (ngSubmit)="btnLogin()">
+    <form (ngSubmit)="onSubmit()">
        <h1 class="header">
-          Sign In, please.
+          Log In, please.
        </h1>
 
-  <div class="form-group">
-    <label for="email">User:</label>
-    <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email">
+  <div>
+    <label for="email">Usuario:</label>
+    <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email" required>
   </div>
-  <div class="form-group">
+  <div class="form">
     <label for="password">Contraseña:</label>
-    <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password">
+    <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password" required>
   </div>
   <button type="submit" class="btn btn-primary">Iniciar sesión</button>
 </form>

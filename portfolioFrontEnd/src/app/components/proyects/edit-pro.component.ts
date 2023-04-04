@@ -32,11 +32,6 @@ export class EditProComponent implements OnInit {
     this.router.navigate(['/home']);
   }
 
-  /*uploadImage($event: any) {
-    const id = this.activatedroute.snapshot.params['id'];
-    const name = 'proyecto_' + id;
-    this.images.uploadImage($event);
-  }*/
   cargarImagen(event:any){
     const id = this.activatedroute.snapshot.params['id'];
     const nombre = 'experiencia_' + id;

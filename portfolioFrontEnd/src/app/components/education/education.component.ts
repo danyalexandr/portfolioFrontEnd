@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { Educacion } from 'src/app/model/educacion';
 import { AuthorizationService } from 'src/app/services/authorization.service';
@@ -25,7 +25,7 @@ export class EducationComponent implements OnInit {
   }
 
   public get isLogin():boolean{
-    return this.auth.isAuthenticated;
+    return this.auth.isAuthenticated();
   }
 
   cargarEducacion():void{

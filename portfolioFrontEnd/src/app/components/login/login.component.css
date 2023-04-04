@@ -1,21 +1,24 @@
 .container{
-    width: 50%;
-    height: 50%;
     box-sizing: unset;
     padding: 150px 300px 300px 300px;
     background-color: grey;
+    width: 640;
+    height: 640px;
 }
 form{
 background-color: rgba(0,0,0,0.1);
-width: 50%px;
-height: 600px;
+width: 640;
+height: 640px;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+color: darkgray;
 
 }
-.mb-3{
+.my-5{
     margin: 50px 30px;
 }
 .btn.btn-primary{
-margin: 100px 160px;
+margin: 100px 140px;
+width: 130px;
 background-color: rgba(0,0,0,0.1);
 border: 3px solid silver;
 align-self: center;
@@ -31,7 +34,6 @@ color: grey;
     color: darkgray;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-.form-group{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: darkgray;
+.form-control{
+margin: 10px 10px;
 }

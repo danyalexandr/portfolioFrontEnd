@@ -23,8 +23,8 @@ export class EditSkillComponent implements OnInit {
   public onClick(){
     const id = this.activatedroute.snapshot.params['id'];
     this.skillSer.update(id, this.skills).subscribe(data => {
-      alert(' Editado con exito');
-    },err => {alert('Editado con exito');})
+      alert(data + ' Editado con exito');
+    },err => {alert(err + 'error al editar');})
     this.router.navigate(['/home']);
   }
 }

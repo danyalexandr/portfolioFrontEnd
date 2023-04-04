@@ -20,7 +20,7 @@ export class AddSkillComponent implements OnInit {
 
   onClick(){
     const pro = new Skill(this.habilidad, this.porcentaje);
-    this.skillSer.save(pro).subscribe(data => {alert("Habilidad añadida OK");
+    this.skillSer.save(pro).subscribe(data => {alert( data + "Habilidad añadida OK");
      });
      this.router.navigate(["/"]);
   }
