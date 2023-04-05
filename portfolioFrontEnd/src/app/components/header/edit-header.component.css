@@ -4,10 +4,20 @@ example-form {
     width: 100%;
     height: 400px;
   }
-  
+  .my-auto {
+   width: 600px;
+}
+
+  form {
+    display: block;
+    margin-top: 20px;
+}
   .example-full-width {
     width: 100%;
   }
+  img, svg {
+    vertical-align: baseline; 
+}
   textarea{
     height: 400px;
     width: 100%;
@@ -18,4 +28,40 @@ example-form {
   .container{
     align-self: center;
     text-align: center;
+    margin-top: 200px;
+  }
+  .btn.btn.dark{
+    background-color: silver;
+    padding: 7px 7px;
+    display: inline;
+    color: dimgrey;
+    margin: 0px 10px;
+    
+  }
+  .btn.btn.dark:hover, .login:active{
+    background-color: lightgray;
+    color: #fff;
+  }
+  @media (min-width: 700px){
+    #perfil{
+      /*position: relative;*/
+      width: 250px;
+      height: 250px;
+      border-radius: 50% ;
+      top: -75px;
+      margin-left: 20px;
+      
+    }
+  }
+
+  @media (min-width:200px) and (max-width: 700px){
+    #perfil{
+      position: relative;
+      width: 50%;
+      height: 70%;
+      border-radius: 80% ;
+      top: 0%;
+      margin-left: 10px;
+    
+    }
   }

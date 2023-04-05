@@ -4,14 +4,24 @@
         
         <form class="example-form" (ngSubmit)="onClick()">
           <h2 class="header">Editar</h2>
+          <div>
+            <img src="{{acercaHeader.img}}" id="perfil" alt="foto de perfil" class="img-fluid"/>
+            <input type="file" id="inputFile" accept=".png, .jpg, .jpeg" multiple (change)="cargarImagen($event)">
+                <button class="btn btn-dark" for="inputFile">
+                   <label for="inputFile" class="labelInputFile">
+                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" 
+                        fill="currentColor" class="mercado-match" width="16" height="16" focusable="false">
+                <path d="M14.13 1.86a3 3 0 00-4.17 0l-7 7L1 15l6.19-2 6.94-7a3 3 0 000-4.16zm-8.36 
+                         9.71l-1.35-1.34L9.64 5 11 6.35z"></path>
+              </svg>  
+                   </label>
+                  </button>         
+             </div>
 
           <mat-form-field class="example-full-width">
             <mat-label>Agrega una nota...</mat-label>
             <textarea matInput placeholder="Acerca de mi..." name="acercaDe" id="acercaDe" [(ngModel)]="acercaHeader.acercaDe"></textarea>
           </mat-form-field> 
-
-          <!--<input type="file" (change)="uploadImage($event)">-->
-
           <br/>
 
           <button type="submit" class="btn btn-success mb-3 col-12 col-sm-12 col-md-6" (ngSubmit)="onClick()">
