@@ -10,50 +10,47 @@ import { ImagesService } from 'src/app/services/images.service';
   styleUrls: ['./edit-header.component.css'],
 })
 export class EditHeaderComponent implements OnInit {
+ 
   acercaHeader:Persona = null;
   imagenes:any[] = [];
 
   constructor(
     private auth: AuthorizationService,
     private router: Router,
-    private aRouter: ActivatedRoute,
-    public images: ImagesService
+    private activatedRouter: ActivatedRoute,
+    public imagesService: ImagesService
   ) {}
 
   ngOnInit(): void {
-    const id = this.aRouter.snapshot.params['id'];
-    this.auth.detail(id).subscribe((data) => {
-    this.acercaHeader = data;
-    },(err) => {
-    alert(err + this.acercaHeader + `api/persona/update/${id}`);
-    this.router.navigate(['/']);
-      }
-    );
+    const id = this.activatedRouter.snapshot.params['id'];
+    this.auth.detail(id).subscribe(data =>{ this.acercaHeader = data 
+    }, err => {alert(err + this.acercaHeader + `/api/update/${id}`); 
+    this.router.navigate(["/"])});
   }
 
-  onClick() {
-    const id = this.aRouter.snapshot.params['id'];
-    this.auth.update(id, this.acercaHeader).subscribe((data) => {
-        alert(data + ' Editado con exito');
-      },(err) => {alert(err + 'Error al Editar');})
+  onClick():void{
+    const id = this.activatedRouter.snapshot.params['id'];
+    this.auth.update(id, this.acercaHeader).subscribe(data => {
+      alert(data + ' Editado con exito');
+    },err => {alert(err + 'Error Editando');})
     this.router.navigate(['/home']);
   }
 
   cargarImagen(event:any){
-    const id = this.aRouter.snapshot.params['id'];
+    const id = this.activatedRouter.snapshot.params['id'];
     const nombre = 'persona_' + id;
     let archivos = event.target.files
     let reader = new FileReader();
-                  
+                    
     reader.readAsDataURL(archivos[0]);
     reader.onloadend = () => {
     this.imagenes.push(reader.result);
-    this.images.subirImagen(nombre + "_" + Date.now(), reader.result)
+    this.imagesService.subirImagen(nombre + "_" + Date.now(), reader.result)
     .then(urlImage => {console.log(urlImage);
-    this.images.url = urlImage;
-    console.log('this.images.url' + ' ' + this.images.url);
+    this.acercaHeader.img = urlImage;
+    console.log('this.imagesService.url' + ' ' + this.acercaHeader.img);
     });                       
-    }
-   }
+      }
+     }
 
 }

@@ -2,12 +2,12 @@
     <div class="row my-8">
         <div class="col-sm-11 col-md-6 col-lg-4 mx-auto my-auto card">
         
-        <form class="example-form" (ngSubmit)="onClick()">
+        <form (ngSubmit)="onClick()" class="m-5">
           <h2 class="header">Editar</h2>
           <div>
             <img src="{{acercaHeader.img}}" id="perfil" alt="foto de perfil" class="img-fluid"/>
             <input type="file" id="inputFile" accept=".png, .jpg, .jpeg" multiple (change)="cargarImagen($event)">
-                <button class="btn btn-dark" for="inputFile">
+                <button class="btn btn" for="inputFile" (ngSubmit)="onClick()">
                    <label for="inputFile" class="labelInputFile">
                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" 
                         fill="currentColor" class="mercado-match" width="16" height="16" focusable="false">

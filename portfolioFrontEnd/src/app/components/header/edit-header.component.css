@@ -8,7 +8,7 @@ example-form {
    width: 600px;
 }
 
-  form {
+form {
     display: block;
     margin-top: 20px;
 }
@@ -30,7 +30,7 @@ example-form {
     text-align: center;
     margin-top: 200px;
   }
-  .btn.btn.dark{
+  .btn.btn{
     background-color: silver;
     padding: 7px 7px;
     display: inline;
@@ -42,6 +42,10 @@ example-form {
     background-color: lightgray;
     color: #fff;
   }
+  .btn.btn-primary:hover{
+    background-color: #fff;
+    color: grey;
+    }
   @media (min-width: 700px){
     #perfil{
       /*position: relative;*/

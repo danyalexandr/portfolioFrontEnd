@@ -66,17 +66,14 @@
     border: 2px solid silver;
     padding-bottom: 0px;
   }
-  .text {
-    font-size: 40px;
-    margin: 50px 0px 0px 30px;
-  }
+
   .p1{
   font-size: 15px;
   padding-bottom: 10px;
-  margin-left: 40px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
 
-  }
+} 
   .p2{
     margin: 50px 0px 0px 30px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -86,8 +83,8 @@
     font-size: 20px;
     padding-top: 0px;
     margin-bottom: 3px;
-    margin-left: 40px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
   }
   .mercado-match{
     margin-left: 10px;
@@ -96,11 +93,11 @@
   @media (min-width: 700px){
     #perfil{
       position: relative;
-      width: 250px;
-      height: 250px;
+      width: 300px;
+     height: 300px;
       border-radius: 50% ;
-      top: -75px;
-      margin-left: 40px;
+      top: -100px;
+      margin-left: 180px;
       
     }
   }
@@ -108,25 +105,14 @@
   @media (min-width:200px) and (max-width: 700px){
     #perfil{
       position: relative;
-      width: 50%;
-      height: 70%;
-      border-radius: 80% ;
-      top: 0%;
-      margin-left: 120px;
-    
+      width: 180px;
+     height: 180px;
+      border-radius: 50% ;
+      top: -80px;
+      margin-left: 130px;
+      
     }
-    .nombre{
-      text-align: center;
-
     }
-    .p1{
-      text-align: center;
-    } 
-    .image-fluid{
-      text-align: center;
-    }
-
-  }
   .contador{
     margin-left: 20px;
     margin-top: 20px;
